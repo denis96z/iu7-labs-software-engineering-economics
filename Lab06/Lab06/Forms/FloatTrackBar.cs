@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Lab06.Forms
 {
-    internal class FloatTrackBar: TrackBar
+    public class FloatTrackBar: TrackBar
     {
         /// <summary>
         /// Минимальное значение.

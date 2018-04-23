@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.gbVisualization = new System.Windows.Forms.GroupBox();
             this.tctlVisualization = new System.Windows.Forms.TabControl();
             this.tpgTables = new System.Windows.Forms.TabPage();
@@ -68,8 +68,8 @@
             this.lblTURN = new System.Windows.Forms.Label();
             this.ftbVIRT = new Lab06.Forms.FloatTrackBar();
             this.lblVIRT = new System.Windows.Forms.Label();
-            this.ftbSTOP = new Lab06.Forms.FloatTrackBar();
-            this.lblSTOP = new System.Windows.Forms.Label();
+            this.ftbSTOR = new Lab06.Forms.FloatTrackBar();
+            this.lblSTOR = new System.Windows.Forms.Label();
             this.ftbTIME = new Lab06.Forms.FloatTrackBar();
             this.lblTIME = new System.Windows.Forms.Label();
             this.ftbCPLX = new Lab06.Forms.FloatTrackBar();
@@ -78,6 +78,9 @@
             this.lblDATA = new System.Windows.Forms.Label();
             this.ftbRELY = new Lab06.Forms.FloatTrackBar();
             this.lblRELY = new System.Windows.Forms.Label();
+            this.gbResults = new System.Windows.Forms.GroupBox();
+            this.lblTotalLabor = new System.Windows.Forms.Label();
+            this.lblTotalTime = new System.Windows.Forms.Label();
             this.gbVisualization.SuspendLayout();
             this.tctlVisualization.SuspendLayout();
             this.tpgTables.SuspendLayout();
@@ -98,11 +101,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.ftbACAP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftbTURN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftbVIRT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ftbSTOP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbSTOR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftbTIME)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftbCPLX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftbDATA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftbRELY)).BeginInit();
+            this.gbResults.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbVisualization
@@ -196,17 +200,17 @@
             // 
             // chrtStaff
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chrtStaff.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chrtStaff.Legends.Add(legend7);
+            chartArea2.Name = "ChartArea1";
+            this.chrtStaff.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chrtStaff.Legends.Add(legend2);
             this.chrtStaff.Location = new System.Drawing.Point(6, 19);
             this.chrtStaff.Name = "chrtStaff";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series7.Legend = "Legend1";
-            series7.Name = "Число сотрудников";
-            this.chrtStaff.Series.Add(series7);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Legend = "Legend1";
+            series2.Name = "Число сотрудников";
+            this.chrtStaff.Series.Add(series2);
             this.chrtStaff.Size = new System.Drawing.Size(448, 300);
             this.chrtStaff.TabIndex = 1;
             // 
@@ -235,8 +239,8 @@
             this.gbParameters.Controls.Add(this.lblTURN);
             this.gbParameters.Controls.Add(this.ftbVIRT);
             this.gbParameters.Controls.Add(this.lblVIRT);
-            this.gbParameters.Controls.Add(this.ftbSTOP);
-            this.gbParameters.Controls.Add(this.lblSTOP);
+            this.gbParameters.Controls.Add(this.ftbSTOR);
+            this.gbParameters.Controls.Add(this.lblSTOR);
             this.gbParameters.Controls.Add(this.ftbTIME);
             this.gbParameters.Controls.Add(this.lblTIME);
             this.gbParameters.Controls.Add(this.ftbCPLX);
@@ -247,7 +251,7 @@
             this.gbParameters.Controls.Add(this.lblRELY);
             this.gbParameters.Location = new System.Drawing.Point(12, 12);
             this.gbParameters.Name = "gbParameters";
-            this.gbParameters.Size = new System.Drawing.Size(274, 537);
+            this.gbParameters.Size = new System.Drawing.Size(274, 403);
             this.gbParameters.TabIndex = 0;
             this.gbParameters.TabStop = false;
             this.gbParameters.Text = "Параметры:";
@@ -540,26 +544,26 @@
             this.lblVIRT.TabIndex = 10;
             this.lblVIRT.Text = "VIRT:";
             // 
-            // ftbSTOP
+            // ftbSTOR
             // 
-            this.ftbSTOP.AutoSize = false;
-            this.ftbSTOP.FloatValue = 1D;
-            this.ftbSTOP.Location = new System.Drawing.Point(71, 92);
-            this.ftbSTOP.MaxFloatValue = 1.56D;
-            this.ftbSTOP.Maximum = 100;
-            this.ftbSTOP.MinFloatValue = 1D;
-            this.ftbSTOP.Name = "ftbSTOP";
-            this.ftbSTOP.Size = new System.Drawing.Size(197, 13);
-            this.ftbSTOP.TabIndex = 9;
+            this.ftbSTOR.AutoSize = false;
+            this.ftbSTOR.FloatValue = 1D;
+            this.ftbSTOR.Location = new System.Drawing.Point(71, 92);
+            this.ftbSTOR.MaxFloatValue = 1.56D;
+            this.ftbSTOR.Maximum = 100;
+            this.ftbSTOR.MinFloatValue = 1D;
+            this.ftbSTOR.Name = "ftbSTOR";
+            this.ftbSTOR.Size = new System.Drawing.Size(197, 13);
+            this.ftbSTOR.TabIndex = 9;
             // 
-            // lblSTOP
+            // lblSTOR
             // 
-            this.lblSTOP.AutoSize = true;
-            this.lblSTOP.Location = new System.Drawing.Point(6, 92);
-            this.lblSTOP.Name = "lblSTOP";
-            this.lblSTOP.Size = new System.Drawing.Size(40, 13);
-            this.lblSTOP.TabIndex = 8;
-            this.lblSTOP.Text = "STOR:";
+            this.lblSTOR.AutoSize = true;
+            this.lblSTOR.Location = new System.Drawing.Point(6, 92);
+            this.lblSTOR.Name = "lblSTOR";
+            this.lblSTOR.Size = new System.Drawing.Size(40, 13);
+            this.lblSTOR.TabIndex = 8;
+            this.lblSTOR.Text = "STOR:";
             // 
             // ftbTIME
             // 
@@ -647,11 +651,41 @@
             this.lblRELY.TabIndex = 0;
             this.lblRELY.Text = "RELY:";
             // 
+            // gbResults
+            // 
+            this.gbResults.Controls.Add(this.lblTotalTime);
+            this.gbResults.Controls.Add(this.lblTotalLabor);
+            this.gbResults.Location = new System.Drawing.Point(12, 421);
+            this.gbResults.Name = "gbResults";
+            this.gbResults.Size = new System.Drawing.Size(274, 128);
+            this.gbResults.TabIndex = 3;
+            this.gbResults.TabStop = false;
+            this.gbResults.Text = "Результат:";
+            // 
+            // lblTotalLabor
+            // 
+            this.lblTotalLabor.AutoSize = true;
+            this.lblTotalLabor.Location = new System.Drawing.Point(6, 27);
+            this.lblTotalLabor.Name = "lblTotalLabor";
+            this.lblTotalLabor.Size = new System.Drawing.Size(94, 13);
+            this.lblTotalLabor.TabIndex = 0;
+            this.lblTotalLabor.Text = "Трудозатраты: ---";
+            // 
+            // lblTotalTime
+            // 
+            this.lblTotalTime.AutoSize = true;
+            this.lblTotalTime.Location = new System.Drawing.Point(6, 60);
+            this.lblTotalTime.Name = "lblTotalTime";
+            this.lblTotalTime.Size = new System.Drawing.Size(55, 13);
+            this.lblTotalTime.TabIndex = 1;
+            this.lblTotalTime.Text = "Время: ---";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.gbResults);
             this.Controls.Add(this.gbVisualization);
             this.Controls.Add(this.gbParameters);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -683,11 +717,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.ftbACAP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftbTURN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftbVIRT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ftbSTOP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbSTOR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftbTIME)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftbCPLX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftbDATA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftbRELY)).EndInit();
+            this.gbResults.ResumeLayout(false);
+            this.gbResults.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -730,8 +766,8 @@
         private System.Windows.Forms.Label lblTURN;
         private FloatTrackBar ftbVIRT;
         private System.Windows.Forms.Label lblVIRT;
-        private FloatTrackBar ftbSTOP;
-        private System.Windows.Forms.Label lblSTOP;
+        private FloatTrackBar ftbSTOR;
+        private System.Windows.Forms.Label lblSTOR;
         private FloatTrackBar ftbTIME;
         private System.Windows.Forms.Label lblTIME;
         private FloatTrackBar ftbCPLX;
@@ -740,6 +776,9 @@
         private System.Windows.Forms.Label lblDATA;
         private FloatTrackBar ftbRELY;
         private System.Windows.Forms.Label lblRELY;
+        private System.Windows.Forms.GroupBox gbResults;
+        private System.Windows.Forms.Label lblTotalLabor;
+        private System.Windows.Forms.Label lblTotalTime;
     }
 }
 
