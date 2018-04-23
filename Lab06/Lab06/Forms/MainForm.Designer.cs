@@ -34,13 +34,13 @@
             this.gbVisualization = new System.Windows.Forms.GroupBox();
             this.tctlVisualization = new System.Windows.Forms.TabControl();
             this.tpgTables = new System.Windows.Forms.TabPage();
-            this.tpgGraphs = new System.Windows.Forms.TabPage();
-            this.lblLaborTime = new System.Windows.Forms.Label();
-            this.dgvLaborTime = new System.Windows.Forms.DataGridView();
-            this.lblDecomposition = new System.Windows.Forms.Label();
             this.dgvDecomposition = new System.Windows.Forms.DataGridView();
-            this.lblStaff = new System.Windows.Forms.Label();
+            this.lblDecomposition = new System.Windows.Forms.Label();
+            this.dgvLaborTime = new System.Windows.Forms.DataGridView();
+            this.lblLaborTime = new System.Windows.Forms.Label();
+            this.tpgGraphs = new System.Windows.Forms.TabPage();
             this.chrtStaff = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.lblStaff = new System.Windows.Forms.Label();
             this.gbParameters = new System.Windows.Forms.GroupBox();
             this.gbMode = new System.Windows.Forms.GroupBox();
             this.rbModeEmbedded = new System.Windows.Forms.RadioButton();
@@ -79,14 +79,14 @@
             this.ftbRELY = new Lab06.Forms.FloatTrackBar();
             this.lblRELY = new System.Windows.Forms.Label();
             this.gbResults = new System.Windows.Forms.GroupBox();
-            this.lblTotalLabor = new System.Windows.Forms.Label();
             this.lblTotalTime = new System.Windows.Forms.Label();
+            this.lblTotalLabor = new System.Windows.Forms.Label();
             this.gbVisualization.SuspendLayout();
             this.tctlVisualization.SuspendLayout();
             this.tpgTables.SuspendLayout();
-            this.tpgGraphs.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLaborTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDecomposition)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaborTime)).BeginInit();
+            this.tpgGraphs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrtStaff)).BeginInit();
             this.gbParameters.SuspendLayout();
             this.gbMode.SuspendLayout();
@@ -143,6 +143,40 @@
             this.tpgTables.Text = "Таблицы";
             this.tpgTables.UseVisualStyleBackColor = true;
             // 
+            // dgvDecomposition
+            // 
+            this.dgvDecomposition.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDecomposition.Location = new System.Drawing.Point(6, 258);
+            this.dgvDecomposition.Name = "dgvDecomposition";
+            this.dgvDecomposition.Size = new System.Drawing.Size(448, 225);
+            this.dgvDecomposition.TabIndex = 3;
+            // 
+            // lblDecomposition
+            // 
+            this.lblDecomposition.AutoSize = true;
+            this.lblDecomposition.Location = new System.Drawing.Point(6, 242);
+            this.lblDecomposition.Name = "lblDecomposition";
+            this.lblDecomposition.Size = new System.Drawing.Size(119, 13);
+            this.lblDecomposition.TabIndex = 2;
+            this.lblDecomposition.Text = "Декомпозиция работ:";
+            // 
+            // dgvLaborTime
+            // 
+            this.dgvLaborTime.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLaborTime.Location = new System.Drawing.Point(6, 19);
+            this.dgvLaborTime.Name = "dgvLaborTime";
+            this.dgvLaborTime.Size = new System.Drawing.Size(448, 220);
+            this.dgvLaborTime.TabIndex = 1;
+            // 
+            // lblLaborTime
+            // 
+            this.lblLaborTime.AutoSize = true;
+            this.lblLaborTime.Location = new System.Drawing.Point(3, 3);
+            this.lblLaborTime.Name = "lblLaborTime";
+            this.lblLaborTime.Size = new System.Drawing.Size(335, 13);
+            this.lblLaborTime.TabIndex = 0;
+            this.lblLaborTime.Text = "Распределение работ и времени по стадиям жизненного цикла:";
+            // 
             // tpgGraphs
             // 
             this.tpgGraphs.Controls.Add(this.chrtStaff);
@@ -154,49 +188,6 @@
             this.tpgGraphs.TabIndex = 1;
             this.tpgGraphs.Text = "Графики";
             this.tpgGraphs.UseVisualStyleBackColor = true;
-            // 
-            // lblLaborTime
-            // 
-            this.lblLaborTime.AutoSize = true;
-            this.lblLaborTime.Location = new System.Drawing.Point(3, 3);
-            this.lblLaborTime.Name = "lblLaborTime";
-            this.lblLaborTime.Size = new System.Drawing.Size(335, 13);
-            this.lblLaborTime.TabIndex = 0;
-            this.lblLaborTime.Text = "Распределение работ и времени по стадиям жизненного цикла:";
-            // 
-            // dgvLaborTime
-            // 
-            this.dgvLaborTime.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLaborTime.Location = new System.Drawing.Point(6, 19);
-            this.dgvLaborTime.Name = "dgvLaborTime";
-            this.dgvLaborTime.Size = new System.Drawing.Size(448, 220);
-            this.dgvLaborTime.TabIndex = 1;
-            // 
-            // lblDecomposition
-            // 
-            this.lblDecomposition.AutoSize = true;
-            this.lblDecomposition.Location = new System.Drawing.Point(6, 242);
-            this.lblDecomposition.Name = "lblDecomposition";
-            this.lblDecomposition.Size = new System.Drawing.Size(119, 13);
-            this.lblDecomposition.TabIndex = 2;
-            this.lblDecomposition.Text = "Декомпозиция работ:";
-            // 
-            // dgvDecomposition
-            // 
-            this.dgvDecomposition.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDecomposition.Location = new System.Drawing.Point(6, 258);
-            this.dgvDecomposition.Name = "dgvDecomposition";
-            this.dgvDecomposition.Size = new System.Drawing.Size(448, 225);
-            this.dgvDecomposition.TabIndex = 3;
-            // 
-            // lblStaff
-            // 
-            this.lblStaff.AutoSize = true;
-            this.lblStaff.Location = new System.Drawing.Point(6, 3);
-            this.lblStaff.Name = "lblStaff";
-            this.lblStaff.Size = new System.Drawing.Size(60, 13);
-            this.lblStaff.TabIndex = 0;
-            this.lblStaff.Text = "Персонал:";
             // 
             // chrtStaff
             // 
@@ -213,6 +204,15 @@
             this.chrtStaff.Series.Add(series2);
             this.chrtStaff.Size = new System.Drawing.Size(448, 300);
             this.chrtStaff.TabIndex = 1;
+            // 
+            // lblStaff
+            // 
+            this.lblStaff.AutoSize = true;
+            this.lblStaff.Location = new System.Drawing.Point(6, 3);
+            this.lblStaff.Name = "lblStaff";
+            this.lblStaff.Size = new System.Drawing.Size(60, 13);
+            this.lblStaff.TabIndex = 0;
+            this.lblStaff.Text = "Персонал:";
             // 
             // gbParameters
             // 
@@ -277,6 +277,7 @@
             this.rbModeEmbedded.TabIndex = 2;
             this.rbModeEmbedded.Text = "Встроенный";
             this.rbModeEmbedded.UseVisualStyleBackColor = true;
+            this.rbModeEmbedded.CheckedChanged += new System.EventHandler(this.OnParameterChanged);
             // 
             // rbModeMedium
             // 
@@ -287,6 +288,7 @@
             this.rbModeMedium.TabIndex = 1;
             this.rbModeMedium.Text = "Промежуточный";
             this.rbModeMedium.UseVisualStyleBackColor = true;
+            this.rbModeMedium.CheckedChanged += new System.EventHandler(this.OnParameterChanged);
             // 
             // rbModeCommon
             // 
@@ -299,6 +301,7 @@
             this.rbModeCommon.TabStop = true;
             this.rbModeCommon.Text = "Обычный";
             this.rbModeCommon.UseVisualStyleBackColor = true;
+            this.rbModeCommon.CheckedChanged += new System.EventHandler(this.OnParameterChanged);
             // 
             // lblLOC
             // 
@@ -311,10 +314,21 @@
             // 
             // nudLOC
             // 
+            this.nudLOC.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.nudLOC.Location = new System.Drawing.Point(71, 302);
+            this.nudLOC.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
             this.nudLOC.Name = "nudLOC";
             this.nudLOC.Size = new System.Drawing.Size(197, 20);
             this.nudLOC.TabIndex = 30;
+            this.nudLOC.ValueChanged += new System.EventHandler(this.OnParameterChanged);
             // 
             // ftbSCED
             // 
@@ -329,6 +343,7 @@
             this.ftbSCED.Size = new System.Drawing.Size(197, 13);
             this.ftbSCED.TabIndex = 29;
             this.ftbSCED.Value = 50;
+            this.ftbSCED.Scroll += new System.EventHandler(this.OnParameterChanged);
             // 
             // lblSCED
             // 
@@ -352,6 +367,7 @@
             this.ftbTOOL.Size = new System.Drawing.Size(197, 13);
             this.ftbTOOL.TabIndex = 27;
             this.ftbTOOL.Value = 50;
+            this.ftbTOOL.Scroll += new System.EventHandler(this.OnParameterChanged);
             // 
             // lblTOOL
             // 
@@ -375,6 +391,7 @@
             this.ftbMODP.Size = new System.Drawing.Size(197, 13);
             this.ftbMODP.TabIndex = 25;
             this.ftbMODP.Value = 50;
+            this.ftbMODP.Scroll += new System.EventHandler(this.OnParameterChanged);
             // 
             // lblMODP
             // 
@@ -398,6 +415,7 @@
             this.ftbLEXP.Size = new System.Drawing.Size(197, 13);
             this.ftbLEXP.TabIndex = 23;
             this.ftbLEXP.Value = 25;
+            this.ftbLEXP.Scroll += new System.EventHandler(this.OnParameterChanged);
             // 
             // lblLEXP
             // 
@@ -421,6 +439,7 @@
             this.ftbVEXP.Size = new System.Drawing.Size(197, 13);
             this.ftbVEXP.TabIndex = 21;
             this.ftbVEXP.Value = 25;
+            this.ftbVEXP.Scroll += new System.EventHandler(this.OnParameterChanged);
             // 
             // lblVEXP
             // 
@@ -444,6 +463,7 @@
             this.ftbPCAP.Size = new System.Drawing.Size(197, 13);
             this.ftbPCAP.TabIndex = 19;
             this.ftbPCAP.Value = 50;
+            this.ftbPCAP.Scroll += new System.EventHandler(this.OnParameterChanged);
             // 
             // lblPCAP
             // 
@@ -467,6 +487,7 @@
             this.ftbAEXP.Size = new System.Drawing.Size(197, 13);
             this.ftbAEXP.TabIndex = 17;
             this.ftbAEXP.Value = 50;
+            this.ftbAEXP.Scroll += new System.EventHandler(this.OnParameterChanged);
             // 
             // lblAEXP
             // 
@@ -490,6 +511,7 @@
             this.ftbACAP.Size = new System.Drawing.Size(197, 13);
             this.ftbACAP.TabIndex = 15;
             this.ftbACAP.Value = 50;
+            this.ftbACAP.Scroll += new System.EventHandler(this.OnParameterChanged);
             // 
             // lblACAP
             // 
@@ -512,6 +534,7 @@
             this.ftbTURN.Size = new System.Drawing.Size(197, 13);
             this.ftbTURN.TabIndex = 13;
             this.ftbTURN.Value = 25;
+            this.ftbTURN.Scroll += new System.EventHandler(this.OnParameterChanged);
             // 
             // lblTURN
             // 
@@ -534,6 +557,7 @@
             this.ftbVIRT.Size = new System.Drawing.Size(197, 13);
             this.ftbVIRT.TabIndex = 11;
             this.ftbVIRT.Value = 25;
+            this.ftbVIRT.Scroll += new System.EventHandler(this.OnParameterChanged);
             // 
             // lblVIRT
             // 
@@ -555,6 +579,7 @@
             this.ftbSTOR.Name = "ftbSTOR";
             this.ftbSTOR.Size = new System.Drawing.Size(197, 13);
             this.ftbSTOR.TabIndex = 9;
+            this.ftbSTOR.Scroll += new System.EventHandler(this.OnParameterChanged);
             // 
             // lblSTOR
             // 
@@ -576,6 +601,7 @@
             this.ftbTIME.Name = "ftbTIME";
             this.ftbTIME.Size = new System.Drawing.Size(197, 13);
             this.ftbTIME.TabIndex = 7;
+            this.ftbTIME.Scroll += new System.EventHandler(this.OnParameterChanged);
             // 
             // lblTIME
             // 
@@ -598,6 +624,7 @@
             this.ftbCPLX.Size = new System.Drawing.Size(197, 13);
             this.ftbCPLX.TabIndex = 5;
             this.ftbCPLX.Value = 50;
+            this.ftbCPLX.Scroll += new System.EventHandler(this.OnParameterChanged);
             // 
             // lblCPLX
             // 
@@ -620,6 +647,7 @@
             this.ftbDATA.Size = new System.Drawing.Size(197, 13);
             this.ftbDATA.TabIndex = 3;
             this.ftbDATA.Value = 50;
+            this.ftbDATA.Scroll += new System.EventHandler(this.OnParameterChanged);
             // 
             // lblDATA
             // 
@@ -641,6 +669,7 @@
             this.ftbRELY.Size = new System.Drawing.Size(197, 13);
             this.ftbRELY.TabIndex = 1;
             this.ftbRELY.Value = 50;
+            this.ftbRELY.Scroll += new System.EventHandler(this.OnParameterChanged);
             // 
             // lblRELY
             // 
@@ -662,15 +691,6 @@
             this.gbResults.TabStop = false;
             this.gbResults.Text = "Результат:";
             // 
-            // lblTotalLabor
-            // 
-            this.lblTotalLabor.AutoSize = true;
-            this.lblTotalLabor.Location = new System.Drawing.Point(6, 27);
-            this.lblTotalLabor.Name = "lblTotalLabor";
-            this.lblTotalLabor.Size = new System.Drawing.Size(94, 13);
-            this.lblTotalLabor.TabIndex = 0;
-            this.lblTotalLabor.Text = "Трудозатраты: ---";
-            // 
             // lblTotalTime
             // 
             this.lblTotalTime.AutoSize = true;
@@ -679,6 +699,15 @@
             this.lblTotalTime.Size = new System.Drawing.Size(55, 13);
             this.lblTotalTime.TabIndex = 1;
             this.lblTotalTime.Text = "Время: ---";
+            // 
+            // lblTotalLabor
+            // 
+            this.lblTotalLabor.AutoSize = true;
+            this.lblTotalLabor.Location = new System.Drawing.Point(6, 27);
+            this.lblTotalLabor.Name = "lblTotalLabor";
+            this.lblTotalLabor.Size = new System.Drawing.Size(94, 13);
+            this.lblTotalLabor.TabIndex = 0;
+            this.lblTotalLabor.Text = "Трудозатраты: ---";
             // 
             // MainForm
             // 
@@ -697,10 +726,10 @@
             this.tctlVisualization.ResumeLayout(false);
             this.tpgTables.ResumeLayout(false);
             this.tpgTables.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDecomposition)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaborTime)).EndInit();
             this.tpgGraphs.ResumeLayout(false);
             this.tpgGraphs.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLaborTime)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDecomposition)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chrtStaff)).EndInit();
             this.gbParameters.ResumeLayout(false);
             this.gbParameters.PerformLayout();

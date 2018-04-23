@@ -61,12 +61,16 @@ namespace Lab06.Calculations
                     throw new ArgumentOutOfRangeException();
             }
 
-            var labor = c1 * EAF * Math.Pow(LOC, p1);
+            var labor = c1 * EAF * Math.Pow(KLOC, p1);
             var time = c2 * Math.Pow(labor, p2);
 
             return (labor, time);
         }
 
-        private double EAF => throw new NotImplementedException();
+        private double EAF => RELY * DATA * CPLX * TIME * STOR *
+                              VIRT * TURN * ACAP * AEXP * PCAP *
+                              VEXP * LEXP * MODP * TOOL * SCED;
+
+        private double KLOC => LOC / 1000.0;
     }
 }

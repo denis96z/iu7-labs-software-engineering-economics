@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
 using Lab06.Calculations;
 
@@ -11,6 +12,7 @@ namespace Lab06.Forms
         public MainForm()
         {
             InitializeComponent();
+            OnParameterChanged(null, null);
         }
 
         public void ParseParameters()
@@ -66,6 +68,19 @@ namespace Lab06.Forms
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private void OnParameterChanged(object sender, EventArgs e)
+        {
+            TryAction(() =>
+            {
+                ParseParameters();
+
+                (var labor, var time) = calculator.CalculateLaborAndTime();
+
+                lblTotalLabor.Text = @"Трудозатраты: " + labor.ToString(CultureInfo.InvariantCulture);
+                lblTotalTime.Text = @"Время: " + time.ToString(CultureInfo.InvariantCulture);
+            });
         }
     }
 }

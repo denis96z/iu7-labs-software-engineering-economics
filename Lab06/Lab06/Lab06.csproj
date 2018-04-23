@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculations\Calculator.cs" />
     <Compile Include="Forms\FloatTrackBar.cs">
       <SubType>Component</SubType>
     </Compile>
