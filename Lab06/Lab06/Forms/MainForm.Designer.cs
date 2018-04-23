@@ -28,117 +28,222 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.gbVisualization = new System.Windows.Forms.GroupBox();
+            this.tctlVisualization = new System.Windows.Forms.TabControl();
+            this.tpgTables = new System.Windows.Forms.TabPage();
+            this.tpgGraphs = new System.Windows.Forms.TabPage();
+            this.lblLaborTime = new System.Windows.Forms.Label();
+            this.dgvLaborTime = new System.Windows.Forms.DataGridView();
+            this.lblDecomposition = new System.Windows.Forms.Label();
+            this.dgvDecomposition = new System.Windows.Forms.DataGridView();
+            this.lblStaff = new System.Windows.Forms.Label();
+            this.chrtStaff = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.gbParameters = new System.Windows.Forms.GroupBox();
+            this.gbMode = new System.Windows.Forms.GroupBox();
+            this.rbModeEmbedded = new System.Windows.Forms.RadioButton();
+            this.rbModeMedium = new System.Windows.Forms.RadioButton();
+            this.rbModeCommon = new System.Windows.Forms.RadioButton();
             this.lblLOC = new System.Windows.Forms.Label();
             this.nudLOC = new System.Windows.Forms.NumericUpDown();
-            this.tbSCED = new Lab06.Forms.FloatTrackBar();
+            this.ftbSCED = new Lab06.Forms.FloatTrackBar();
             this.lblSCED = new System.Windows.Forms.Label();
-            this.tbTOOL = new Lab06.Forms.FloatTrackBar();
+            this.ftbTOOL = new Lab06.Forms.FloatTrackBar();
             this.lblTOOL = new System.Windows.Forms.Label();
-            this.tbMODP = new Lab06.Forms.FloatTrackBar();
+            this.ftbMODP = new Lab06.Forms.FloatTrackBar();
             this.lblMODP = new System.Windows.Forms.Label();
-            this.tbLEXP = new Lab06.Forms.FloatTrackBar();
+            this.ftbLEXP = new Lab06.Forms.FloatTrackBar();
             this.lblLEXP = new System.Windows.Forms.Label();
-            this.tbVEXP = new Lab06.Forms.FloatTrackBar();
+            this.ftbVEXP = new Lab06.Forms.FloatTrackBar();
             this.lblVEXP = new System.Windows.Forms.Label();
-            this.tbPCAP = new Lab06.Forms.FloatTrackBar();
+            this.ftbPCAP = new Lab06.Forms.FloatTrackBar();
             this.lblPCAP = new System.Windows.Forms.Label();
-            this.tbAEXP = new Lab06.Forms.FloatTrackBar();
+            this.ftbAEXP = new Lab06.Forms.FloatTrackBar();
             this.lblAEXP = new System.Windows.Forms.Label();
-            this.tbACAP = new Lab06.Forms.FloatTrackBar();
+            this.ftbACAP = new Lab06.Forms.FloatTrackBar();
             this.lblACAP = new System.Windows.Forms.Label();
-            this.tbTURN = new Lab06.Forms.FloatTrackBar();
+            this.ftbTURN = new Lab06.Forms.FloatTrackBar();
             this.lblTURN = new System.Windows.Forms.Label();
-            this.tbVIRT = new Lab06.Forms.FloatTrackBar();
+            this.ftbVIRT = new Lab06.Forms.FloatTrackBar();
             this.lblVIRT = new System.Windows.Forms.Label();
-            this.tbSTOR = new Lab06.Forms.FloatTrackBar();
-            this.lblSTOR = new System.Windows.Forms.Label();
-            this.tbTIME = new Lab06.Forms.FloatTrackBar();
+            this.ftbSTOP = new Lab06.Forms.FloatTrackBar();
+            this.lblSTOP = new System.Windows.Forms.Label();
+            this.ftbTIME = new Lab06.Forms.FloatTrackBar();
             this.lblTIME = new System.Windows.Forms.Label();
-            this.tbCPLX = new Lab06.Forms.FloatTrackBar();
+            this.ftbCPLX = new Lab06.Forms.FloatTrackBar();
             this.lblCPLX = new System.Windows.Forms.Label();
-            this.tbDATA = new Lab06.Forms.FloatTrackBar();
+            this.ftbDATA = new Lab06.Forms.FloatTrackBar();
             this.lblDATA = new System.Windows.Forms.Label();
-            this.tbRELY = new Lab06.Forms.FloatTrackBar();
+            this.ftbRELY = new Lab06.Forms.FloatTrackBar();
             this.lblRELY = new System.Windows.Forms.Label();
-            this.gbVisualization = new System.Windows.Forms.GroupBox();
-            this.gbMode = new System.Windows.Forms.GroupBox();
-            this.rbModeCommon = new System.Windows.Forms.RadioButton();
-            this.rbModeMedium = new System.Windows.Forms.RadioButton();
-            this.rbModeEmbedded = new System.Windows.Forms.RadioButton();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.gbParameters.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudLOC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbSCED)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbTOOL)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbMODP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbLEXP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbVEXP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbPCAP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbAEXP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbACAP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbTURN)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbVIRT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbSTOR)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbTIME)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbCPLX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbDATA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbRELY)).BeginInit();
             this.gbVisualization.SuspendLayout();
+            this.tctlVisualization.SuspendLayout();
+            this.tpgTables.SuspendLayout();
+            this.tpgGraphs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaborTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDecomposition)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chrtStaff)).BeginInit();
+            this.gbParameters.SuspendLayout();
             this.gbMode.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLOC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbSCED)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbTOOL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbMODP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbLEXP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbVEXP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbPCAP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbAEXP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbACAP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbTURN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbVIRT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbSTOP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbTIME)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbCPLX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbDATA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbRELY)).BeginInit();
             this.SuspendLayout();
+            // 
+            // gbVisualization
+            // 
+            this.gbVisualization.Controls.Add(this.tctlVisualization);
+            this.gbVisualization.Location = new System.Drawing.Point(292, 12);
+            this.gbVisualization.Name = "gbVisualization";
+            this.gbVisualization.Size = new System.Drawing.Size(480, 537);
+            this.gbVisualization.TabIndex = 2;
+            this.gbVisualization.TabStop = false;
+            this.gbVisualization.Text = "Представление результатов:";
+            // 
+            // tctlVisualization
+            // 
+            this.tctlVisualization.Controls.Add(this.tpgTables);
+            this.tctlVisualization.Controls.Add(this.tpgGraphs);
+            this.tctlVisualization.Location = new System.Drawing.Point(6, 16);
+            this.tctlVisualization.Name = "tctlVisualization";
+            this.tctlVisualization.SelectedIndex = 0;
+            this.tctlVisualization.Size = new System.Drawing.Size(468, 515);
+            this.tctlVisualization.TabIndex = 4;
+            // 
+            // tpgTables
+            // 
+            this.tpgTables.Controls.Add(this.dgvDecomposition);
+            this.tpgTables.Controls.Add(this.lblDecomposition);
+            this.tpgTables.Controls.Add(this.dgvLaborTime);
+            this.tpgTables.Controls.Add(this.lblLaborTime);
+            this.tpgTables.Location = new System.Drawing.Point(4, 22);
+            this.tpgTables.Name = "tpgTables";
+            this.tpgTables.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgTables.Size = new System.Drawing.Size(460, 489);
+            this.tpgTables.TabIndex = 0;
+            this.tpgTables.Text = "Таблицы";
+            this.tpgTables.UseVisualStyleBackColor = true;
+            // 
+            // tpgGraphs
+            // 
+            this.tpgGraphs.Controls.Add(this.chrtStaff);
+            this.tpgGraphs.Controls.Add(this.lblStaff);
+            this.tpgGraphs.Location = new System.Drawing.Point(4, 22);
+            this.tpgGraphs.Name = "tpgGraphs";
+            this.tpgGraphs.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgGraphs.Size = new System.Drawing.Size(460, 489);
+            this.tpgGraphs.TabIndex = 1;
+            this.tpgGraphs.Text = "Графики";
+            this.tpgGraphs.UseVisualStyleBackColor = true;
+            // 
+            // lblLaborTime
+            // 
+            this.lblLaborTime.AutoSize = true;
+            this.lblLaborTime.Location = new System.Drawing.Point(3, 3);
+            this.lblLaborTime.Name = "lblLaborTime";
+            this.lblLaborTime.Size = new System.Drawing.Size(335, 13);
+            this.lblLaborTime.TabIndex = 0;
+            this.lblLaborTime.Text = "Распределение работ и времени по стадиям жизненного цикла:";
+            // 
+            // dgvLaborTime
+            // 
+            this.dgvLaborTime.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLaborTime.Location = new System.Drawing.Point(6, 19);
+            this.dgvLaborTime.Name = "dgvLaborTime";
+            this.dgvLaborTime.Size = new System.Drawing.Size(448, 220);
+            this.dgvLaborTime.TabIndex = 1;
+            // 
+            // lblDecomposition
+            // 
+            this.lblDecomposition.AutoSize = true;
+            this.lblDecomposition.Location = new System.Drawing.Point(6, 242);
+            this.lblDecomposition.Name = "lblDecomposition";
+            this.lblDecomposition.Size = new System.Drawing.Size(119, 13);
+            this.lblDecomposition.TabIndex = 2;
+            this.lblDecomposition.Text = "Декомпозиция работ:";
+            // 
+            // dgvDecomposition
+            // 
+            this.dgvDecomposition.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDecomposition.Location = new System.Drawing.Point(6, 258);
+            this.dgvDecomposition.Name = "dgvDecomposition";
+            this.dgvDecomposition.Size = new System.Drawing.Size(448, 225);
+            this.dgvDecomposition.TabIndex = 3;
+            // 
+            // lblStaff
+            // 
+            this.lblStaff.AutoSize = true;
+            this.lblStaff.Location = new System.Drawing.Point(6, 3);
+            this.lblStaff.Name = "lblStaff";
+            this.lblStaff.Size = new System.Drawing.Size(60, 13);
+            this.lblStaff.TabIndex = 0;
+            this.lblStaff.Text = "Персонал:";
+            // 
+            // chrtStaff
+            // 
+            chartArea7.Name = "ChartArea1";
+            this.chrtStaff.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.chrtStaff.Legends.Add(legend7);
+            this.chrtStaff.Location = new System.Drawing.Point(6, 19);
+            this.chrtStaff.Name = "chrtStaff";
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series7.Legend = "Legend1";
+            series7.Name = "Число сотрудников";
+            this.chrtStaff.Series.Add(series7);
+            this.chrtStaff.Size = new System.Drawing.Size(448, 300);
+            this.chrtStaff.TabIndex = 1;
             // 
             // gbParameters
             // 
             this.gbParameters.Controls.Add(this.gbMode);
             this.gbParameters.Controls.Add(this.lblLOC);
             this.gbParameters.Controls.Add(this.nudLOC);
-            this.gbParameters.Controls.Add(this.tbSCED);
+            this.gbParameters.Controls.Add(this.ftbSCED);
             this.gbParameters.Controls.Add(this.lblSCED);
-            this.gbParameters.Controls.Add(this.tbTOOL);
+            this.gbParameters.Controls.Add(this.ftbTOOL);
             this.gbParameters.Controls.Add(this.lblTOOL);
-            this.gbParameters.Controls.Add(this.tbMODP);
+            this.gbParameters.Controls.Add(this.ftbMODP);
             this.gbParameters.Controls.Add(this.lblMODP);
-            this.gbParameters.Controls.Add(this.tbLEXP);
+            this.gbParameters.Controls.Add(this.ftbLEXP);
             this.gbParameters.Controls.Add(this.lblLEXP);
-            this.gbParameters.Controls.Add(this.tbVEXP);
+            this.gbParameters.Controls.Add(this.ftbVEXP);
             this.gbParameters.Controls.Add(this.lblVEXP);
-            this.gbParameters.Controls.Add(this.tbPCAP);
+            this.gbParameters.Controls.Add(this.ftbPCAP);
             this.gbParameters.Controls.Add(this.lblPCAP);
-            this.gbParameters.Controls.Add(this.tbAEXP);
+            this.gbParameters.Controls.Add(this.ftbAEXP);
             this.gbParameters.Controls.Add(this.lblAEXP);
-            this.gbParameters.Controls.Add(this.tbACAP);
+            this.gbParameters.Controls.Add(this.ftbACAP);
             this.gbParameters.Controls.Add(this.lblACAP);
-            this.gbParameters.Controls.Add(this.tbTURN);
+            this.gbParameters.Controls.Add(this.ftbTURN);
             this.gbParameters.Controls.Add(this.lblTURN);
-            this.gbParameters.Controls.Add(this.tbVIRT);
+            this.gbParameters.Controls.Add(this.ftbVIRT);
             this.gbParameters.Controls.Add(this.lblVIRT);
-            this.gbParameters.Controls.Add(this.tbSTOR);
-            this.gbParameters.Controls.Add(this.lblSTOR);
-            this.gbParameters.Controls.Add(this.tbTIME);
+            this.gbParameters.Controls.Add(this.ftbSTOP);
+            this.gbParameters.Controls.Add(this.lblSTOP);
+            this.gbParameters.Controls.Add(this.ftbTIME);
             this.gbParameters.Controls.Add(this.lblTIME);
-            this.gbParameters.Controls.Add(this.tbCPLX);
+            this.gbParameters.Controls.Add(this.ftbCPLX);
             this.gbParameters.Controls.Add(this.lblCPLX);
-            this.gbParameters.Controls.Add(this.tbDATA);
+            this.gbParameters.Controls.Add(this.ftbDATA);
             this.gbParameters.Controls.Add(this.lblDATA);
-            this.gbParameters.Controls.Add(this.tbRELY);
+            this.gbParameters.Controls.Add(this.ftbRELY);
             this.gbParameters.Controls.Add(this.lblRELY);
             this.gbParameters.Location = new System.Drawing.Point(12, 12);
             this.gbParameters.Name = "gbParameters";
@@ -146,6 +251,50 @@
             this.gbParameters.TabIndex = 0;
             this.gbParameters.TabStop = false;
             this.gbParameters.Text = "Параметры:";
+            // 
+            // gbMode
+            // 
+            this.gbMode.Controls.Add(this.rbModeEmbedded);
+            this.gbMode.Controls.Add(this.rbModeMedium);
+            this.gbMode.Controls.Add(this.rbModeCommon);
+            this.gbMode.Location = new System.Drawing.Point(9, 328);
+            this.gbMode.Name = "gbMode";
+            this.gbMode.Size = new System.Drawing.Size(259, 67);
+            this.gbMode.TabIndex = 32;
+            this.gbMode.TabStop = false;
+            this.gbMode.Text = "Режим:";
+            // 
+            // rbModeEmbedded
+            // 
+            this.rbModeEmbedded.AutoSize = true;
+            this.rbModeEmbedded.Location = new System.Drawing.Point(6, 42);
+            this.rbModeEmbedded.Name = "rbModeEmbedded";
+            this.rbModeEmbedded.Size = new System.Drawing.Size(87, 17);
+            this.rbModeEmbedded.TabIndex = 2;
+            this.rbModeEmbedded.Text = "Встроенный";
+            this.rbModeEmbedded.UseVisualStyleBackColor = true;
+            // 
+            // rbModeMedium
+            // 
+            this.rbModeMedium.AutoSize = true;
+            this.rbModeMedium.Location = new System.Drawing.Point(84, 19);
+            this.rbModeMedium.Name = "rbModeMedium";
+            this.rbModeMedium.Size = new System.Drawing.Size(108, 17);
+            this.rbModeMedium.TabIndex = 1;
+            this.rbModeMedium.Text = "Промежуточный";
+            this.rbModeMedium.UseVisualStyleBackColor = true;
+            // 
+            // rbModeCommon
+            // 
+            this.rbModeCommon.AutoSize = true;
+            this.rbModeCommon.Checked = true;
+            this.rbModeCommon.Location = new System.Drawing.Point(6, 19);
+            this.rbModeCommon.Name = "rbModeCommon";
+            this.rbModeCommon.Size = new System.Drawing.Size(72, 17);
+            this.rbModeCommon.TabIndex = 0;
+            this.rbModeCommon.TabStop = true;
+            this.rbModeCommon.Text = "Обычный";
+            this.rbModeCommon.UseVisualStyleBackColor = true;
             // 
             // lblLOC
             // 
@@ -163,16 +312,19 @@
             this.nudLOC.Size = new System.Drawing.Size(197, 20);
             this.nudLOC.TabIndex = 30;
             // 
-            // tbSCED
+            // ftbSCED
             // 
-            this.tbSCED.AutoSize = false;
-            this.tbSCED.Location = new System.Drawing.Point(71, 283);
-            this.tbSCED.MaxFloatValue = 0D;
-            this.tbSCED.Maximum = 100;
-            this.tbSCED.MinFloatValue = 0D;
-            this.tbSCED.Name = "tbSCED";
-            this.tbSCED.Size = new System.Drawing.Size(197, 13);
-            this.tbSCED.TabIndex = 29;
+            this.ftbSCED.AutoSize = false;
+            this.ftbSCED.FloatValue = 1.165D;
+            this.ftbSCED.Location = new System.Drawing.Point(71, 283);
+            this.ftbSCED.MaxFloatValue = 1.23D;
+            this.ftbSCED.Maximum = 100;
+            this.ftbSCED.MinFloatValue = 1.1D;
+            this.ftbSCED.Name = "ftbSCED";
+            this.ftbSCED.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ftbSCED.Size = new System.Drawing.Size(197, 13);
+            this.ftbSCED.TabIndex = 29;
+            this.ftbSCED.Value = 50;
             // 
             // lblSCED
             // 
@@ -183,16 +335,19 @@
             this.lblSCED.TabIndex = 28;
             this.lblSCED.Text = "SCED:";
             // 
-            // tbTOOL
+            // ftbTOOL
             // 
-            this.tbTOOL.AutoSize = false;
-            this.tbTOOL.Location = new System.Drawing.Point(71, 264);
-            this.tbTOOL.MaxFloatValue = 0D;
-            this.tbTOOL.Maximum = 100;
-            this.tbTOOL.MinFloatValue = 0D;
-            this.tbTOOL.Name = "tbTOOL";
-            this.tbTOOL.Size = new System.Drawing.Size(197, 13);
-            this.tbTOOL.TabIndex = 27;
+            this.ftbTOOL.AutoSize = false;
+            this.ftbTOOL.FloatValue = 1.035D;
+            this.ftbTOOL.Location = new System.Drawing.Point(71, 264);
+            this.ftbTOOL.MaxFloatValue = 1.24D;
+            this.ftbTOOL.Maximum = 100;
+            this.ftbTOOL.MinFloatValue = 0.83D;
+            this.ftbTOOL.Name = "ftbTOOL";
+            this.ftbTOOL.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ftbTOOL.Size = new System.Drawing.Size(197, 13);
+            this.ftbTOOL.TabIndex = 27;
+            this.ftbTOOL.Value = 50;
             // 
             // lblTOOL
             // 
@@ -203,16 +358,19 @@
             this.lblTOOL.TabIndex = 26;
             this.lblTOOL.Text = "TOOL:";
             // 
-            // tbMODP
+            // ftbMODP
             // 
-            this.tbMODP.AutoSize = false;
-            this.tbMODP.Location = new System.Drawing.Point(71, 245);
-            this.tbMODP.MaxFloatValue = 0D;
-            this.tbMODP.Maximum = 100;
-            this.tbMODP.MinFloatValue = 0D;
-            this.tbMODP.Name = "tbMODP";
-            this.tbMODP.Size = new System.Drawing.Size(197, 13);
-            this.tbMODP.TabIndex = 25;
+            this.ftbMODP.AutoSize = false;
+            this.ftbMODP.FloatValue = 1.03D;
+            this.ftbMODP.Location = new System.Drawing.Point(71, 245);
+            this.ftbMODP.MaxFloatValue = 1.24D;
+            this.ftbMODP.Maximum = 100;
+            this.ftbMODP.MinFloatValue = 0.82D;
+            this.ftbMODP.Name = "ftbMODP";
+            this.ftbMODP.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ftbMODP.Size = new System.Drawing.Size(197, 13);
+            this.ftbMODP.TabIndex = 25;
+            this.ftbMODP.Value = 50;
             // 
             // lblMODP
             // 
@@ -223,16 +381,19 @@
             this.lblMODP.TabIndex = 24;
             this.lblMODP.Text = "MODP:";
             // 
-            // tbLEXP
+            // ftbLEXP
             // 
-            this.tbLEXP.AutoSize = false;
-            this.tbLEXP.Location = new System.Drawing.Point(71, 226);
-            this.tbLEXP.MaxFloatValue = 0D;
-            this.tbLEXP.Maximum = 100;
-            this.tbLEXP.MinFloatValue = 0D;
-            this.tbLEXP.Name = "tbLEXP";
-            this.tbLEXP.Size = new System.Drawing.Size(197, 13);
-            this.tbLEXP.TabIndex = 23;
+            this.ftbLEXP.AutoSize = false;
+            this.ftbLEXP.FloatValue = 0.99749999999999994D;
+            this.ftbLEXP.Location = new System.Drawing.Point(71, 226);
+            this.ftbLEXP.MaxFloatValue = 1.14D;
+            this.ftbLEXP.Maximum = 100;
+            this.ftbLEXP.MinFloatValue = 0.95D;
+            this.ftbLEXP.Name = "ftbLEXP";
+            this.ftbLEXP.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ftbLEXP.Size = new System.Drawing.Size(197, 13);
+            this.ftbLEXP.TabIndex = 23;
+            this.ftbLEXP.Value = 25;
             // 
             // lblLEXP
             // 
@@ -243,16 +404,19 @@
             this.lblLEXP.TabIndex = 22;
             this.lblLEXP.Text = "LEXP:";
             // 
-            // tbVEXP
+            // ftbVEXP
             // 
-            this.tbVEXP.AutoSize = false;
-            this.tbVEXP.Location = new System.Drawing.Point(71, 207);
-            this.tbVEXP.MaxFloatValue = 0D;
-            this.tbVEXP.Maximum = 100;
-            this.tbVEXP.MinFloatValue = 0D;
-            this.tbVEXP.Name = "tbVEXP";
-            this.tbVEXP.Size = new System.Drawing.Size(197, 13);
-            this.tbVEXP.TabIndex = 21;
+            this.ftbVEXP.AutoSize = false;
+            this.ftbVEXP.FloatValue = 0.9775D;
+            this.ftbVEXP.Location = new System.Drawing.Point(71, 207);
+            this.ftbVEXP.MaxFloatValue = 1.21D;
+            this.ftbVEXP.Maximum = 100;
+            this.ftbVEXP.MinFloatValue = 0.9D;
+            this.ftbVEXP.Name = "ftbVEXP";
+            this.ftbVEXP.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ftbVEXP.Size = new System.Drawing.Size(197, 13);
+            this.ftbVEXP.TabIndex = 21;
+            this.ftbVEXP.Value = 25;
             // 
             // lblVEXP
             // 
@@ -263,16 +427,19 @@
             this.lblVEXP.TabIndex = 20;
             this.lblVEXP.Text = "VEXP:";
             // 
-            // tbPCAP
+            // ftbPCAP
             // 
-            this.tbPCAP.AutoSize = false;
-            this.tbPCAP.Location = new System.Drawing.Point(71, 188);
-            this.tbPCAP.MaxFloatValue = 0D;
-            this.tbPCAP.Maximum = 100;
-            this.tbPCAP.MinFloatValue = 0D;
-            this.tbPCAP.Name = "tbPCAP";
-            this.tbPCAP.Size = new System.Drawing.Size(197, 13);
-            this.tbPCAP.TabIndex = 19;
+            this.ftbPCAP.AutoSize = false;
+            this.ftbPCAP.FloatValue = 1.06D;
+            this.ftbPCAP.Location = new System.Drawing.Point(71, 188);
+            this.ftbPCAP.MaxFloatValue = 1.42D;
+            this.ftbPCAP.Maximum = 100;
+            this.ftbPCAP.MinFloatValue = 0.7D;
+            this.ftbPCAP.Name = "ftbPCAP";
+            this.ftbPCAP.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ftbPCAP.Size = new System.Drawing.Size(197, 13);
+            this.ftbPCAP.TabIndex = 19;
+            this.ftbPCAP.Value = 50;
             // 
             // lblPCAP
             // 
@@ -283,16 +450,19 @@
             this.lblPCAP.TabIndex = 18;
             this.lblPCAP.Text = "PCAP:";
             // 
-            // tbAEXP
+            // ftbAEXP
             // 
-            this.tbAEXP.AutoSize = false;
-            this.tbAEXP.Location = new System.Drawing.Point(71, 169);
-            this.tbAEXP.MaxFloatValue = 0D;
-            this.tbAEXP.Maximum = 100;
-            this.tbAEXP.MinFloatValue = 0D;
-            this.tbAEXP.Name = "tbAEXP";
-            this.tbAEXP.Size = new System.Drawing.Size(197, 13);
-            this.tbAEXP.TabIndex = 17;
+            this.ftbAEXP.AutoSize = false;
+            this.ftbAEXP.FloatValue = 1.055D;
+            this.ftbAEXP.Location = new System.Drawing.Point(71, 169);
+            this.ftbAEXP.MaxFloatValue = 1.29D;
+            this.ftbAEXP.Maximum = 100;
+            this.ftbAEXP.MinFloatValue = 0.82D;
+            this.ftbAEXP.Name = "ftbAEXP";
+            this.ftbAEXP.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ftbAEXP.Size = new System.Drawing.Size(197, 13);
+            this.ftbAEXP.TabIndex = 17;
+            this.ftbAEXP.Value = 50;
             // 
             // lblAEXP
             // 
@@ -303,16 +473,19 @@
             this.lblAEXP.TabIndex = 16;
             this.lblAEXP.Text = "AEXP:";
             // 
-            // tbACAP
+            // ftbACAP
             // 
-            this.tbACAP.AutoSize = false;
-            this.tbACAP.Location = new System.Drawing.Point(71, 150);
-            this.tbACAP.MaxFloatValue = 0D;
-            this.tbACAP.Maximum = 100;
-            this.tbACAP.MinFloatValue = 0D;
-            this.tbACAP.Name = "tbACAP";
-            this.tbACAP.Size = new System.Drawing.Size(197, 13);
-            this.tbACAP.TabIndex = 15;
+            this.ftbACAP.AutoSize = false;
+            this.ftbACAP.FloatValue = 1.085D;
+            this.ftbACAP.Location = new System.Drawing.Point(71, 150);
+            this.ftbACAP.MaxFloatValue = 1.46D;
+            this.ftbACAP.Maximum = 100;
+            this.ftbACAP.MinFloatValue = 0.71D;
+            this.ftbACAP.Name = "ftbACAP";
+            this.ftbACAP.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ftbACAP.Size = new System.Drawing.Size(197, 13);
+            this.ftbACAP.TabIndex = 15;
+            this.ftbACAP.Value = 50;
             // 
             // lblACAP
             // 
@@ -323,16 +496,18 @@
             this.lblACAP.TabIndex = 14;
             this.lblACAP.Text = "ACAP:";
             // 
-            // tbTURN
+            // ftbTURN
             // 
-            this.tbTURN.AutoSize = false;
-            this.tbTURN.Location = new System.Drawing.Point(71, 131);
-            this.tbTURN.MaxFloatValue = 0D;
-            this.tbTURN.Maximum = 100;
-            this.tbTURN.MinFloatValue = 0D;
-            this.tbTURN.Name = "tbTURN";
-            this.tbTURN.Size = new System.Drawing.Size(197, 13);
-            this.tbTURN.TabIndex = 13;
+            this.ftbTURN.AutoSize = false;
+            this.ftbTURN.FloatValue = 0.94D;
+            this.ftbTURN.Location = new System.Drawing.Point(71, 131);
+            this.ftbTURN.MaxFloatValue = 1.15D;
+            this.ftbTURN.Maximum = 100;
+            this.ftbTURN.MinFloatValue = 0.87D;
+            this.ftbTURN.Name = "ftbTURN";
+            this.ftbTURN.Size = new System.Drawing.Size(197, 13);
+            this.ftbTURN.TabIndex = 13;
+            this.ftbTURN.Value = 25;
             // 
             // lblTURN
             // 
@@ -343,16 +518,18 @@
             this.lblTURN.TabIndex = 12;
             this.lblTURN.Text = "TURN:";
             // 
-            // tbVIRT
+            // ftbVIRT
             // 
-            this.tbVIRT.AutoSize = false;
-            this.tbVIRT.Location = new System.Drawing.Point(71, 111);
-            this.tbVIRT.MaxFloatValue = 0D;
-            this.tbVIRT.Maximum = 100;
-            this.tbVIRT.MinFloatValue = 0D;
-            this.tbVIRT.Name = "tbVIRT";
-            this.tbVIRT.Size = new System.Drawing.Size(197, 13);
-            this.tbVIRT.TabIndex = 11;
+            this.ftbVIRT.AutoSize = false;
+            this.ftbVIRT.FloatValue = 0.9775D;
+            this.ftbVIRT.Location = new System.Drawing.Point(71, 111);
+            this.ftbVIRT.MaxFloatValue = 1.3D;
+            this.ftbVIRT.Maximum = 100;
+            this.ftbVIRT.MinFloatValue = 0.87D;
+            this.ftbVIRT.Name = "ftbVIRT";
+            this.ftbVIRT.Size = new System.Drawing.Size(197, 13);
+            this.ftbVIRT.TabIndex = 11;
+            this.ftbVIRT.Value = 25;
             // 
             // lblVIRT
             // 
@@ -363,36 +540,38 @@
             this.lblVIRT.TabIndex = 10;
             this.lblVIRT.Text = "VIRT:";
             // 
-            // tbSTOR
+            // ftbSTOP
             // 
-            this.tbSTOR.AutoSize = false;
-            this.tbSTOR.Location = new System.Drawing.Point(71, 92);
-            this.tbSTOR.MaxFloatValue = 0D;
-            this.tbSTOR.Maximum = 100;
-            this.tbSTOR.MinFloatValue = 0D;
-            this.tbSTOR.Name = "tbSTOR";
-            this.tbSTOR.Size = new System.Drawing.Size(197, 13);
-            this.tbSTOR.TabIndex = 9;
+            this.ftbSTOP.AutoSize = false;
+            this.ftbSTOP.FloatValue = 1D;
+            this.ftbSTOP.Location = new System.Drawing.Point(71, 92);
+            this.ftbSTOP.MaxFloatValue = 1.56D;
+            this.ftbSTOP.Maximum = 100;
+            this.ftbSTOP.MinFloatValue = 1D;
+            this.ftbSTOP.Name = "ftbSTOP";
+            this.ftbSTOP.Size = new System.Drawing.Size(197, 13);
+            this.ftbSTOP.TabIndex = 9;
             // 
-            // lblSTOR
+            // lblSTOP
             // 
-            this.lblSTOR.AutoSize = true;
-            this.lblSTOR.Location = new System.Drawing.Point(6, 92);
-            this.lblSTOR.Name = "lblSTOR";
-            this.lblSTOR.Size = new System.Drawing.Size(40, 13);
-            this.lblSTOR.TabIndex = 8;
-            this.lblSTOR.Text = "STOR:";
+            this.lblSTOP.AutoSize = true;
+            this.lblSTOP.Location = new System.Drawing.Point(6, 92);
+            this.lblSTOP.Name = "lblSTOP";
+            this.lblSTOP.Size = new System.Drawing.Size(40, 13);
+            this.lblSTOP.TabIndex = 8;
+            this.lblSTOP.Text = "STOR:";
             // 
-            // tbTIME
+            // ftbTIME
             // 
-            this.tbTIME.AutoSize = false;
-            this.tbTIME.Location = new System.Drawing.Point(71, 73);
-            this.tbTIME.MaxFloatValue = 0D;
-            this.tbTIME.Maximum = 100;
-            this.tbTIME.MinFloatValue = 0D;
-            this.tbTIME.Name = "tbTIME";
-            this.tbTIME.Size = new System.Drawing.Size(197, 13);
-            this.tbTIME.TabIndex = 7;
+            this.ftbTIME.AutoSize = false;
+            this.ftbTIME.FloatValue = 1D;
+            this.ftbTIME.Location = new System.Drawing.Point(71, 73);
+            this.ftbTIME.MaxFloatValue = 1.66D;
+            this.ftbTIME.Maximum = 100;
+            this.ftbTIME.MinFloatValue = 1D;
+            this.ftbTIME.Name = "ftbTIME";
+            this.ftbTIME.Size = new System.Drawing.Size(197, 13);
+            this.ftbTIME.TabIndex = 7;
             // 
             // lblTIME
             // 
@@ -403,16 +582,18 @@
             this.lblTIME.TabIndex = 6;
             this.lblTIME.Text = "TIME:";
             // 
-            // tbCPLX
+            // ftbCPLX
             // 
-            this.tbCPLX.AutoSize = false;
-            this.tbCPLX.Location = new System.Drawing.Point(71, 54);
-            this.tbCPLX.MaxFloatValue = 0D;
-            this.tbCPLX.Maximum = 100;
-            this.tbCPLX.MinFloatValue = 0D;
-            this.tbCPLX.Name = "tbCPLX";
-            this.tbCPLX.Size = new System.Drawing.Size(197, 13);
-            this.tbCPLX.TabIndex = 5;
+            this.ftbCPLX.AutoSize = false;
+            this.ftbCPLX.FloatValue = 1.1749999999999998D;
+            this.ftbCPLX.Location = new System.Drawing.Point(71, 54);
+            this.ftbCPLX.MaxFloatValue = 1.65D;
+            this.ftbCPLX.Maximum = 100;
+            this.ftbCPLX.MinFloatValue = 0.7D;
+            this.ftbCPLX.Name = "ftbCPLX";
+            this.ftbCPLX.Size = new System.Drawing.Size(197, 13);
+            this.ftbCPLX.TabIndex = 5;
+            this.ftbCPLX.Value = 50;
             // 
             // lblCPLX
             // 
@@ -423,16 +604,18 @@
             this.lblCPLX.TabIndex = 4;
             this.lblCPLX.Text = "CPLX:";
             // 
-            // tbDATA
+            // ftbDATA
             // 
-            this.tbDATA.AutoSize = false;
-            this.tbDATA.Location = new System.Drawing.Point(71, 35);
-            this.tbDATA.MaxFloatValue = 0D;
-            this.tbDATA.Maximum = 100;
-            this.tbDATA.MinFloatValue = 0D;
-            this.tbDATA.Name = "tbDATA";
-            this.tbDATA.Size = new System.Drawing.Size(197, 13);
-            this.tbDATA.TabIndex = 3;
+            this.ftbDATA.AutoSize = false;
+            this.ftbDATA.FloatValue = 1.0499999999999998D;
+            this.ftbDATA.Location = new System.Drawing.Point(71, 35);
+            this.ftbDATA.MaxFloatValue = 1.16D;
+            this.ftbDATA.Maximum = 100;
+            this.ftbDATA.MinFloatValue = 0.94D;
+            this.ftbDATA.Name = "ftbDATA";
+            this.ftbDATA.Size = new System.Drawing.Size(197, 13);
+            this.ftbDATA.TabIndex = 3;
+            this.ftbDATA.Value = 50;
             // 
             // lblDATA
             // 
@@ -442,16 +625,18 @@
             this.lblDATA.TabIndex = 2;
             this.lblDATA.Text = "DATA:";
             // 
-            // tbRELY
+            // ftbRELY
             // 
-            this.tbRELY.AutoSize = false;
-            this.tbRELY.Location = new System.Drawing.Point(71, 16);
-            this.tbRELY.MaxFloatValue = 0D;
-            this.tbRELY.Maximum = 100;
-            this.tbRELY.MinFloatValue = 0D;
-            this.tbRELY.Name = "tbRELY";
-            this.tbRELY.Size = new System.Drawing.Size(197, 13);
-            this.tbRELY.TabIndex = 1;
+            this.ftbRELY.AutoSize = false;
+            this.ftbRELY.FloatValue = 1.075D;
+            this.ftbRELY.Location = new System.Drawing.Point(71, 16);
+            this.ftbRELY.MaxFloatValue = 1.4D;
+            this.ftbRELY.Maximum = 100;
+            this.ftbRELY.MinFloatValue = 0.75D;
+            this.ftbRELY.Name = "ftbRELY";
+            this.ftbRELY.Size = new System.Drawing.Size(197, 13);
+            this.ftbRELY.TabIndex = 1;
+            this.ftbRELY.Value = 50;
             // 
             // lblRELY
             // 
@@ -462,157 +647,6 @@
             this.lblRELY.TabIndex = 0;
             this.lblRELY.Text = "RELY:";
             // 
-            // gbVisualization
-            // 
-            this.gbVisualization.Controls.Add(this.tabControl1);
-            this.gbVisualization.Location = new System.Drawing.Point(292, 12);
-            this.gbVisualization.Name = "gbVisualization";
-            this.gbVisualization.Size = new System.Drawing.Size(480, 537);
-            this.gbVisualization.TabIndex = 2;
-            this.gbVisualization.TabStop = false;
-            this.gbVisualization.Text = "Представление результатов:";
-            // 
-            // gbMode
-            // 
-            this.gbMode.Controls.Add(this.rbModeEmbedded);
-            this.gbMode.Controls.Add(this.rbModeMedium);
-            this.gbMode.Controls.Add(this.rbModeCommon);
-            this.gbMode.Location = new System.Drawing.Point(9, 328);
-            this.gbMode.Name = "gbMode";
-            this.gbMode.Size = new System.Drawing.Size(259, 67);
-            this.gbMode.TabIndex = 32;
-            this.gbMode.TabStop = false;
-            this.gbMode.Text = "Режим:";
-            // 
-            // rbModeCommon
-            // 
-            this.rbModeCommon.AutoSize = true;
-            this.rbModeCommon.Checked = true;
-            this.rbModeCommon.Location = new System.Drawing.Point(6, 19);
-            this.rbModeCommon.Name = "rbModeCommon";
-            this.rbModeCommon.Size = new System.Drawing.Size(72, 17);
-            this.rbModeCommon.TabIndex = 0;
-            this.rbModeCommon.TabStop = true;
-            this.rbModeCommon.Text = "Обычный";
-            this.rbModeCommon.UseVisualStyleBackColor = true;
-            // 
-            // rbModeMedium
-            // 
-            this.rbModeMedium.AutoSize = true;
-            this.rbModeMedium.Location = new System.Drawing.Point(84, 19);
-            this.rbModeMedium.Name = "rbModeMedium";
-            this.rbModeMedium.Size = new System.Drawing.Size(108, 17);
-            this.rbModeMedium.TabIndex = 1;
-            this.rbModeMedium.TabStop = true;
-            this.rbModeMedium.Text = "Промежуточный";
-            this.rbModeMedium.UseVisualStyleBackColor = true;
-            // 
-            // rbModeEmbedded
-            // 
-            this.rbModeEmbedded.AutoSize = true;
-            this.rbModeEmbedded.Location = new System.Drawing.Point(6, 42);
-            this.rbModeEmbedded.Name = "rbModeEmbedded";
-            this.rbModeEmbedded.Size = new System.Drawing.Size(87, 17);
-            this.rbModeEmbedded.TabIndex = 2;
-            this.rbModeEmbedded.TabStop = true;
-            this.rbModeEmbedded.Text = "Встроенный";
-            this.rbModeEmbedded.UseVisualStyleBackColor = true;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(6, 16);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(468, 515);
-            this.tabControl1.TabIndex = 4;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.dataGridView2);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(460, 489);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Таблицы";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.chart1);
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(460, 489);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Графики";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(335, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Распределение работ и времени по стадиям жизненного цикла:";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(448, 220);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 242);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Декомпозиция работ:";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 258);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(448, 225);
-            this.dataGridView2.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Персонал:";
-            // 
-            // chart1
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(6, 19);
-            this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Legend = "Legend1";
-            series2.Name = "Число сотрудников";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(448, 300);
-            this.chart1.TabIndex = 1;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -620,90 +654,92 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.gbVisualization);
             this.Controls.Add(this.gbParameters);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Лабораторная работа №6";
+            this.gbVisualization.ResumeLayout(false);
+            this.tctlVisualization.ResumeLayout(false);
+            this.tpgTables.ResumeLayout(false);
+            this.tpgTables.PerformLayout();
+            this.tpgGraphs.ResumeLayout(false);
+            this.tpgGraphs.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaborTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDecomposition)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chrtStaff)).EndInit();
             this.gbParameters.ResumeLayout(false);
             this.gbParameters.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudLOC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbSCED)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbTOOL)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbMODP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbLEXP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbVEXP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbPCAP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbAEXP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbACAP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbTURN)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbVIRT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbSTOR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbTIME)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbCPLX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbDATA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbRELY)).EndInit();
-            this.gbVisualization.ResumeLayout(false);
             this.gbMode.ResumeLayout(false);
             this.gbMode.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLOC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbSCED)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbTOOL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbMODP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbLEXP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbVEXP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbPCAP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbAEXP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbACAP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbTURN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbVIRT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbSTOP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbTIME)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbCPLX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbDATA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ftbRELY)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox gbParameters;
-        private FloatTrackBar tbSCED;
-        private System.Windows.Forms.Label lblSCED;
-        private FloatTrackBar tbTOOL;
-        private System.Windows.Forms.Label lblTOOL;
-        private System.Windows.Forms.Label lblMODP;
-        private System.Windows.Forms.Label lblLEXP;
-        private System.Windows.Forms.Label lblVEXP;
-        private System.Windows.Forms.Label lblPCAP;
-        private System.Windows.Forms.Label lblAEXP;
-        private System.Windows.Forms.Label lblACAP;
-        private System.Windows.Forms.Label lblTURN;
-        private System.Windows.Forms.Label lblVIRT;
-        private System.Windows.Forms.Label lblSTOR;
-        private System.Windows.Forms.Label lblTIME;
-        private System.Windows.Forms.Label lblCPLX;
-        private System.Windows.Forms.Label lblDATA;
-        private System.Windows.Forms.Label lblRELY;
-        private System.Windows.Forms.Label lblLOC;
-        private System.Windows.Forms.NumericUpDown nudLOC;
         private System.Windows.Forms.GroupBox gbVisualization;
+        private System.Windows.Forms.TabControl tctlVisualization;
+        private System.Windows.Forms.TabPage tpgTables;
+        private System.Windows.Forms.TabPage tpgGraphs;
+        private System.Windows.Forms.Label lblLaborTime;
+        private System.Windows.Forms.DataGridView dgvLaborTime;
+        private System.Windows.Forms.Label lblDecomposition;
+        private System.Windows.Forms.DataGridView dgvDecomposition;
+        private System.Windows.Forms.Label lblStaff;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chrtStaff;
+        private System.Windows.Forms.GroupBox gbParameters;
         private System.Windows.Forms.GroupBox gbMode;
-        private System.Windows.Forms.RadioButton rbModeCommon;
-        private FloatTrackBar tbMODP;
-        private FloatTrackBar tbLEXP;
-        private FloatTrackBar tbVEXP;
-        private FloatTrackBar tbPCAP;
-        private FloatTrackBar tbAEXP;
-        private FloatTrackBar tbACAP;
-        private FloatTrackBar tbTURN;
-        private FloatTrackBar tbVIRT;
-        private FloatTrackBar tbSTOR;
-        private FloatTrackBar tbTIME;
-        private FloatTrackBar tbCPLX;
-        private FloatTrackBar tbDATA;
-        private FloatTrackBar tbRELY;
         private System.Windows.Forms.RadioButton rbModeEmbedded;
         private System.Windows.Forms.RadioButton rbModeMedium;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.RadioButton rbModeCommon;
+        private System.Windows.Forms.Label lblLOC;
+        private System.Windows.Forms.NumericUpDown nudLOC;
+        private FloatTrackBar ftbSCED;
+        private System.Windows.Forms.Label lblSCED;
+        private FloatTrackBar ftbTOOL;
+        private System.Windows.Forms.Label lblTOOL;
+        private FloatTrackBar ftbMODP;
+        private System.Windows.Forms.Label lblMODP;
+        private FloatTrackBar ftbLEXP;
+        private System.Windows.Forms.Label lblLEXP;
+        private FloatTrackBar ftbVEXP;
+        private System.Windows.Forms.Label lblVEXP;
+        private FloatTrackBar ftbPCAP;
+        private System.Windows.Forms.Label lblPCAP;
+        private FloatTrackBar ftbAEXP;
+        private System.Windows.Forms.Label lblAEXP;
+        private FloatTrackBar ftbACAP;
+        private System.Windows.Forms.Label lblACAP;
+        private FloatTrackBar ftbTURN;
+        private System.Windows.Forms.Label lblTURN;
+        private FloatTrackBar ftbVIRT;
+        private System.Windows.Forms.Label lblVIRT;
+        private FloatTrackBar ftbSTOP;
+        private System.Windows.Forms.Label lblSTOP;
+        private FloatTrackBar ftbTIME;
+        private System.Windows.Forms.Label lblTIME;
+        private FloatTrackBar ftbCPLX;
+        private System.Windows.Forms.Label lblCPLX;
+        private FloatTrackBar ftbDATA;
+        private System.Windows.Forms.Label lblDATA;
+        private FloatTrackBar ftbRELY;
+        private System.Windows.Forms.Label lblRELY;
     }
 }
 
