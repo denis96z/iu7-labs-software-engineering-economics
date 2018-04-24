@@ -14,6 +14,7 @@ namespace Lab06.Forms
         public MainForm()
         {
             InitializeComponent();
+            CreateTables();
             OnParameterChanged(null, null);
         }
 
@@ -97,8 +98,7 @@ namespace Lab06.Forms
 
                 var lifecycle = parser.LoadLifecycle();
                 var decomposition = parser.LoadDecomposition();
-
-                throw new NotImplementedException();
+                SetTablesRows(lifecycle, decomposition);
             });
         }
 
@@ -172,6 +172,83 @@ namespace Lab06.Forms
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
+            }
+        }
+
+        public void CreateTables()
+        {
+            var colTaskLT = new DataGridViewColumn
+            {
+                HeaderText = @"Вид деятельности",
+                Width = 200,
+                ReadOnly = true,
+                Name = "Task",
+                Frozen = true,
+                CellTemplate = new DataGridViewTextBoxCell()
+            };
+
+            var colLabor = new DataGridViewColumn
+            {
+                HeaderText = @"Работа (%)",
+                Width = 100,
+                ReadOnly = true,
+                Name = "Labor",
+                Frozen = true,
+                CellTemplate = new DataGridViewTextBoxCell()
+            };
+
+            var colTime = new DataGridViewColumn
+            {
+                HeaderText = @"Время (%)",
+                Width = 100,
+                ReadOnly = true,
+                Name = "Time",
+                Frozen = true,
+                CellTemplate = new DataGridViewTextBoxCell()
+            };
+
+            dgvLaborTime.Columns.Add(colTaskLT);
+            dgvLaborTime.Columns.Add(colLabor);
+            dgvLaborTime.Columns.Add(colTime);
+            dgvLaborTime.AllowUserToAddRows = false;
+
+            var colTaskDC = new DataGridViewColumn
+            {
+                HeaderText = @"Вид деятельности",
+                Width = 200,
+                ReadOnly = true,
+                Name = "Task",
+                Frozen = true,
+                CellTemplate = new DataGridViewTextBoxCell()
+            };
+
+            var colBudget = new DataGridViewColumn
+            {
+                HeaderText = @"Бюджет (%)",
+                Width = 100,
+                ReadOnly = true,
+                Name = "Budget",
+                Frozen = true,
+                CellTemplate = new DataGridViewTextBoxCell()
+            };
+
+            dgvDecomposition.Columns.Add(colTaskDC);
+            dgvDecomposition.Columns.Add(colBudget);
+            dgvDecomposition.AllowUserToAddRows = false;
+        }
+
+        public void SetTablesRows(IEnumerable<Task> lifecycle, IEnumerable<Task> decomposition)
+        {
+            dgvLaborTime.Rows.Clear();
+            foreach (var task in lifecycle)
+            {
+                dgvLaborTime.Rows.Add(task.Name, task.LaborPercent, task.TimePercent);
+            }
+
+            dgvDecomposition.Rows.Clear();
+            foreach (var task in decomposition)
+            {
+                dgvDecomposition.Rows.Add(task.Name, task.BudgetPercent);
             }
         }
     }

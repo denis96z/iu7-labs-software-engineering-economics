@@ -35,35 +35,35 @@
   <decomposition>
     <task>
       <name>Анализ требований</name>
-      <budget>4</budget>
+      <budgetpercent>4</budgetpercent>
     </task>
     <task>
       <name>Проектирование продукта</name>
-      <budget>12</budget>
+      <budgetpercent>12</budgetpercent>
     </task>
     <task>
       <name>Программирование</name>
-      <budget>44</budget>
+      <budgetpercent>44</budgetpercent>
     </task>
     <task>
       <name>Планирование тестирования</name>
-      <budget>6</budget>
+      <budgetpercent>6</budgetpercent>
     </task>
     <task>
       <name>Верификация и аттестация</name>
-      <budget>14</budget>
+      <budgetpercent>14</budgetpercent>
     </task>
     <task>
       <name>Канцелярия проекта</name>
-      <budget>7</budget>
+      <budgetpercent>7</budgetpercent>
     </task>
     <task>
       <name>Управление конфигурацией и обеспечение качества</name>
-      <budget>7</budget>
+      <budgetpercent>7</budgetpercent>
     </task>
     <task>
       <name>Создание руководств</name>
-      <budget>6</budget>
+      <budgetpercent>6</budgetpercent>
     </task>
   </decomposition>
 </project>

@@ -11,7 +11,7 @@ namespace Lab06.IO
         public int Value { get; set; }
     }
 
-    internal struct Task
+    public struct Task
     {
         public string Name { get; set; }
         public int LaborPercent { get; set; }
