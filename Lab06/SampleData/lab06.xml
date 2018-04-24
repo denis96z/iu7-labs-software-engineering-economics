@@ -1,10 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<project name="project1">
-  <loc value="10000"/>
+<project name="lab06">
+  <loc value="25000"/>
   <manmonthcost value="80000"/>
   <drivers>
-    <driver name="RELY" value="100"></driver>
-    <driver name="DATA" value="25"></driver>
+    <driver name="ACAP" value="25"></driver>
+    <driver name="AEXP" value="25"></driver>
+    <driver name="PCAP" value="25"></driver>
+    <driver name="VEXP" value="0"></driver>
+    <driver name="LEXP" value="0"></driver>
+    <driver name="MODP" value="25"></driver>
+    <driver name="TOOL" value="25"></driver>
   </drivers>
   <lifecycle>
     <task>

@@ -94,7 +94,7 @@ namespace Lab06.Forms
                 lblTotalTime.Text = @"Время: " + time.ToString(CultureInfo.InvariantCulture);
                 lblBudget.Text = @"Бюджет: " + cost.ToString(CultureInfo.InvariantCulture);
 
-                UpdateTables(lifecycleCount);
+                UpdateTables(calculator.Lifecycle, lifecycleCount);
                 UpdateCharts(lifecycleCount, staffCount);
             });
         }
@@ -274,7 +274,7 @@ namespace Lab06.Forms
 
             var colLabor = new DataGridViewColumn
             {
-                HeaderText = @"Работа",
+                HeaderText = @"Работа (чел./мес.)",
                 Width = 100,
                 ReadOnly = true,
                 Name = "Labor",
@@ -284,7 +284,7 @@ namespace Lab06.Forms
 
             var colTime = new DataGridViewColumn
             {
-                HeaderText = @"Время",
+                HeaderText = @"Время (мес.)",
                 Width = 100,
                 ReadOnly = true,
                 Name = "Time",
@@ -306,13 +306,15 @@ namespace Lab06.Forms
             dgvLifecycle.Rows.Clear();
             foreach (var task in lifecycle)
             {
-                dgvLifecycle.Rows.Add(task.Name, task.LaborPercent, task.TimePercent);
+                var overPrefix = task.Overhead ? "+" : "";
+                dgvLifecycle.Rows.Add(task.Name, overPrefix + task.LaborPercent, overPrefix + task.TimePercent);
             }
 
             dgvDecomposition.Rows.Clear();
             foreach (var task in decomposition)
             {
-                dgvDecomposition.Rows.Add(task.Name, task.BudgetPercent);
+                var overPrefix = task.Overhead ? "+" : "";
+                dgvDecomposition.Rows.Add(task.Name, overPrefix + task.BudgetPercent);
             }
 
             dgvLifecycleCount.Rows.Clear();
@@ -322,12 +324,14 @@ namespace Lab06.Forms
             }
         }
 
-        public void UpdateTables(List<(double, double)> lifecycleCount)
+        public void UpdateTables(List<Task> lifecycle, List<(double, double)> lifecycleCount)
         {
             for (var i = 0; i < lifecycleCount.Count; ++i)
             {
-                dgvLifecycleCount["labor", i].Value = lifecycleCount[i].Item1;
-                dgvLifecycleCount["time", i].Value = lifecycleCount[i].Item2;
+                dgvLifecycleCount["labor", i].Value = (lifecycle[i].Overhead ? "+" : "") +
+                    lifecycleCount[i].Item1.ToString(CultureInfo.InvariantCulture);
+                dgvLifecycleCount["time", i].Value = (lifecycle[i].Overhead ? "+" : "") + 
+                    lifecycleCount[i].Item2.ToString(CultureInfo.InvariantCulture);
             }
         }
 

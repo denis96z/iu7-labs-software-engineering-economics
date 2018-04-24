@@ -14,6 +14,7 @@ namespace Lab06.IO
     public struct Task
     {
         public string Name { get; set; }
+        public bool Overhead { get; set; }
         public int LaborPercent { get; set; }
         public int TimePercent { get; set; }
         public int BudgetPercent { get; set; }
@@ -85,12 +86,11 @@ namespace Lab06.IO
                     let labor = task.Element("laborpercent")
                     let time = task.Element("timepercent")
                     let budget = task.Element("budgetpercent")
-                               where labor?.Attribute("overhead") == null &&
-                                     time?.Attribute("overhead") == null &&
-                                     budget?.Attribute("overhead") == null
+                    let overhead = labor?.Attribute("overhead")
                     select new Task
                     {
                         Name = name.Value,
+                        Overhead = overhead != null,
                         LaborPercent = labor != null ? int.Parse(labor.Value) : 0,
                         TimePercent = time != null ? int.Parse(time.Value) : 0,
                         BudgetPercent = budget != null ? int.Parse(budget.Value) : 0
