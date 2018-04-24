@@ -33,11 +33,11 @@
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.gbVisualization = new System.Windows.Forms.GroupBox();
             this.tctlVisualization = new System.Windows.Forms.TabControl();
-            this.tpgTables = new System.Windows.Forms.TabPage();
+            this.tpgInTables = new System.Windows.Forms.TabPage();
             this.dgvDecomposition = new System.Windows.Forms.DataGridView();
             this.lblDecomposition = new System.Windows.Forms.Label();
-            this.dgvLaborTime = new System.Windows.Forms.DataGridView();
-            this.lblLaborTime = new System.Windows.Forms.Label();
+            this.dgvLifecycle = new System.Windows.Forms.DataGridView();
+            this.lblLifecycle = new System.Windows.Forms.Label();
             this.tpgGraphs = new System.Windows.Forms.TabPage();
             this.chrtStaff = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lblStaff = new System.Windows.Forms.Label();
@@ -82,12 +82,17 @@
             this.lblTotalTime = new System.Windows.Forms.Label();
             this.lblTotalLabor = new System.Windows.Forms.Label();
             this.btnLoadFile = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
+            this.tabOutTables = new System.Windows.Forms.TabPage();
+            this.dgvDecompositionCount = new System.Windows.Forms.DataGridView();
+            this.lblOutDecomposition = new System.Windows.Forms.Label();
+            this.dgvLifecycleCount = new System.Windows.Forms.DataGridView();
+            this.lblLifecycleCount = new System.Windows.Forms.Label();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.gbVisualization.SuspendLayout();
             this.tctlVisualization.SuspendLayout();
-            this.tpgTables.SuspendLayout();
+            this.tpgInTables.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDecomposition)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLaborTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLifecycle)).BeginInit();
             this.tpgGraphs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrtStaff)).BeginInit();
             this.gbParameters.SuspendLayout();
@@ -109,6 +114,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.ftbDATA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftbRELY)).BeginInit();
             this.gbResults.SuspendLayout();
+            this.tabOutTables.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDecompositionCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLifecycleCount)).BeginInit();
             this.SuspendLayout();
             // 
             // gbVisualization
@@ -123,7 +131,8 @@
             // 
             // tctlVisualization
             // 
-            this.tctlVisualization.Controls.Add(this.tpgTables);
+            this.tctlVisualization.Controls.Add(this.tpgInTables);
+            this.tctlVisualization.Controls.Add(this.tabOutTables);
             this.tctlVisualization.Controls.Add(this.tpgGraphs);
             this.tctlVisualization.Location = new System.Drawing.Point(6, 16);
             this.tctlVisualization.Name = "tctlVisualization";
@@ -131,19 +140,19 @@
             this.tctlVisualization.Size = new System.Drawing.Size(468, 515);
             this.tctlVisualization.TabIndex = 4;
             // 
-            // tpgTables
+            // tpgInTables
             // 
-            this.tpgTables.Controls.Add(this.dgvDecomposition);
-            this.tpgTables.Controls.Add(this.lblDecomposition);
-            this.tpgTables.Controls.Add(this.dgvLaborTime);
-            this.tpgTables.Controls.Add(this.lblLaborTime);
-            this.tpgTables.Location = new System.Drawing.Point(4, 22);
-            this.tpgTables.Name = "tpgTables";
-            this.tpgTables.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgTables.Size = new System.Drawing.Size(460, 489);
-            this.tpgTables.TabIndex = 0;
-            this.tpgTables.Text = "Таблицы";
-            this.tpgTables.UseVisualStyleBackColor = true;
+            this.tpgInTables.Controls.Add(this.dgvDecomposition);
+            this.tpgInTables.Controls.Add(this.lblDecomposition);
+            this.tpgInTables.Controls.Add(this.dgvLifecycle);
+            this.tpgInTables.Controls.Add(this.lblLifecycle);
+            this.tpgInTables.Location = new System.Drawing.Point(4, 22);
+            this.tpgInTables.Name = "tpgInTables";
+            this.tpgInTables.Padding = new System.Windows.Forms.Padding(3);
+            this.tpgInTables.Size = new System.Drawing.Size(460, 489);
+            this.tpgInTables.TabIndex = 0;
+            this.tpgInTables.Text = "Соотношение";
+            this.tpgInTables.UseVisualStyleBackColor = true;
             // 
             // dgvDecomposition
             // 
@@ -162,22 +171,22 @@
             this.lblDecomposition.TabIndex = 2;
             this.lblDecomposition.Text = "Декомпозиция работ:";
             // 
-            // dgvLaborTime
+            // dgvLifecycle
             // 
-            this.dgvLaborTime.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLaborTime.Location = new System.Drawing.Point(6, 19);
-            this.dgvLaborTime.Name = "dgvLaborTime";
-            this.dgvLaborTime.Size = new System.Drawing.Size(448, 220);
-            this.dgvLaborTime.TabIndex = 1;
+            this.dgvLifecycle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLifecycle.Location = new System.Drawing.Point(6, 19);
+            this.dgvLifecycle.Name = "dgvLifecycle";
+            this.dgvLifecycle.Size = new System.Drawing.Size(448, 220);
+            this.dgvLifecycle.TabIndex = 1;
             // 
-            // lblLaborTime
+            // lblLifecycle
             // 
-            this.lblLaborTime.AutoSize = true;
-            this.lblLaborTime.Location = new System.Drawing.Point(3, 3);
-            this.lblLaborTime.Name = "lblLaborTime";
-            this.lblLaborTime.Size = new System.Drawing.Size(335, 13);
-            this.lblLaborTime.TabIndex = 0;
-            this.lblLaborTime.Text = "Распределение работ и времени по стадиям жизненного цикла:";
+            this.lblLifecycle.AutoSize = true;
+            this.lblLifecycle.Location = new System.Drawing.Point(3, 3);
+            this.lblLifecycle.Name = "lblLifecycle";
+            this.lblLifecycle.Size = new System.Drawing.Size(98, 13);
+            this.lblLifecycle.TabIndex = 0;
+            this.lblLifecycle.Text = "Жизненный цикл:";
             // 
             // tpgGraphs
             // 
@@ -721,21 +730,63 @@
             this.btnLoadFile.UseVisualStyleBackColor = true;
             this.btnLoadFile.Click += new System.EventHandler(this.btnLoadFile_Click);
             // 
-            // btnRefresh
+            // tabOutTables
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(93, 12);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.btnRefresh.TabIndex = 5;
-            this.btnRefresh.Text = "Обновить";
-            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.tabOutTables.Controls.Add(this.dgvDecompositionCount);
+            this.tabOutTables.Controls.Add(this.lblOutDecomposition);
+            this.tabOutTables.Controls.Add(this.dgvLifecycleCount);
+            this.tabOutTables.Controls.Add(this.lblLifecycleCount);
+            this.tabOutTables.Location = new System.Drawing.Point(4, 22);
+            this.tabOutTables.Name = "tabOutTables";
+            this.tabOutTables.Size = new System.Drawing.Size(460, 489);
+            this.tabOutTables.TabIndex = 2;
+            this.tabOutTables.Text = "Распределение";
+            this.tabOutTables.UseVisualStyleBackColor = true;
+            // 
+            // dgvDecompositionCount
+            // 
+            this.dgvDecompositionCount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDecompositionCount.Location = new System.Drawing.Point(8, 259);
+            this.dgvDecompositionCount.Name = "dgvDecompositionCount";
+            this.dgvDecompositionCount.Size = new System.Drawing.Size(448, 225);
+            this.dgvDecompositionCount.TabIndex = 7;
+            // 
+            // lblOutDecomposition
+            // 
+            this.lblOutDecomposition.AutoSize = true;
+            this.lblOutDecomposition.Location = new System.Drawing.Point(8, 243);
+            this.lblOutDecomposition.Name = "lblOutDecomposition";
+            this.lblOutDecomposition.Size = new System.Drawing.Size(81, 13);
+            this.lblOutDecomposition.TabIndex = 6;
+            this.lblOutDecomposition.Text = "Деомпозиция:";
+            // 
+            // dgvLifecycleCount
+            // 
+            this.dgvLifecycleCount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLifecycleCount.Location = new System.Drawing.Point(8, 20);
+            this.dgvLifecycleCount.Name = "dgvLifecycleCount";
+            this.dgvLifecycleCount.Size = new System.Drawing.Size(448, 220);
+            this.dgvLifecycleCount.TabIndex = 5;
+            // 
+            // lblLifecycleCount
+            // 
+            this.lblLifecycleCount.AutoSize = true;
+            this.lblLifecycleCount.Location = new System.Drawing.Point(5, 4);
+            this.lblLifecycleCount.Name = "lblLifecycleCount";
+            this.lblLifecycleCount.Size = new System.Drawing.Size(98, 13);
+            this.lblLifecycleCount.TabIndex = 4;
+            this.lblLifecycleCount.Text = "Жизненный цикл:";
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.DefaultExt = "xml";
+            this.openFileDialog.FileName = "Открыть файл...";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnLoadFile);
             this.Controls.Add(this.gbResults);
             this.Controls.Add(this.gbVisualization);
@@ -747,10 +798,10 @@
             this.Text = "Лабораторная работа №6";
             this.gbVisualization.ResumeLayout(false);
             this.tctlVisualization.ResumeLayout(false);
-            this.tpgTables.ResumeLayout(false);
-            this.tpgTables.PerformLayout();
+            this.tpgInTables.ResumeLayout(false);
+            this.tpgInTables.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDecomposition)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLaborTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLifecycle)).EndInit();
             this.tpgGraphs.ResumeLayout(false);
             this.tpgGraphs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrtStaff)).EndInit();
@@ -776,6 +827,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ftbRELY)).EndInit();
             this.gbResults.ResumeLayout(false);
             this.gbResults.PerformLayout();
+            this.tabOutTables.ResumeLayout(false);
+            this.tabOutTables.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDecompositionCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLifecycleCount)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -783,10 +838,10 @@
         #endregion
         private System.Windows.Forms.GroupBox gbVisualization;
         private System.Windows.Forms.TabControl tctlVisualization;
-        private System.Windows.Forms.TabPage tpgTables;
+        private System.Windows.Forms.TabPage tpgInTables;
         private System.Windows.Forms.TabPage tpgGraphs;
-        private System.Windows.Forms.Label lblLaborTime;
-        private System.Windows.Forms.DataGridView dgvLaborTime;
+        private System.Windows.Forms.Label lblLifecycle;
+        private System.Windows.Forms.DataGridView dgvLifecycle;
         private System.Windows.Forms.Label lblDecomposition;
         private System.Windows.Forms.DataGridView dgvDecomposition;
         private System.Windows.Forms.Label lblStaff;
@@ -832,7 +887,12 @@
         private System.Windows.Forms.Label lblTotalLabor;
         private System.Windows.Forms.Label lblTotalTime;
         private System.Windows.Forms.Button btnLoadFile;
-        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.TabPage tabOutTables;
+        private System.Windows.Forms.DataGridView dgvDecompositionCount;
+        private System.Windows.Forms.Label lblOutDecomposition;
+        private System.Windows.Forms.DataGridView dgvLifecycleCount;
+        private System.Windows.Forms.Label lblLifecycleCount;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 

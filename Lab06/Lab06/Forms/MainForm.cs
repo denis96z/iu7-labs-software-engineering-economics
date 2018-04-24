@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using Lab06.Calculations;
 using Lab06.IO;
 
@@ -14,7 +16,10 @@ namespace Lab06.Forms
         public MainForm()
         {
             InitializeComponent();
+
             CreateTables();
+            CreateCountTables();
+
             OnParameterChanged(null, null);
         }
 
@@ -48,7 +53,7 @@ namespace Lab06.Forms
                 {
                     calculator.Mode = CalculatorMode.Medium;
                 }
-                else if (rbModeCommon.Checked)
+                else if (rbModeEmbedded.Checked)
                 {
                     calculator.Mode = CalculatorMode.Embedded;
                 }
@@ -81,8 +86,15 @@ namespace Lab06.Forms
 
                 (var labor, var time) = calculator.CalculateLaborAndTime();
 
+                var lifecycleCount = calculator.CalculateLifecycle();
+                var decompositionCount = calculator.CalculateDecomposition();
+                var staffCount = calculator.CountStaff();
+
                 lblTotalLabor.Text = @"Трудозатраты: " + labor.ToString(CultureInfo.InvariantCulture);
                 lblTotalTime.Text = @"Время: " + time.ToString(CultureInfo.InvariantCulture);
+
+                UpdateTables(lifecycleCount, decompositionCount);
+                UpdateCharts(lifecycleCount, staffCount);
             });
         }
 
@@ -90,21 +102,31 @@ namespace Lab06.Forms
         {
             TryAction(() =>
             {
-                var parser = new XmlParser("project.xml");
+                if (openFileDialog.ShowDialog() != DialogResult.OK)
+                {
+                    return;
+                }
+
+                var parser = new XmlParser(openFileDialog.FileName);
 
                 var loc = parser.LoadLOC();
+                var budget = parser.LoadBudget();
                 var drivers = parser.LoadDrivers();
-                SetParameters(loc, drivers);
+                SetParameters(loc, budget, drivers);
 
                 var lifecycle = parser.LoadLifecycle();
                 var decomposition = parser.LoadDecomposition();
                 SetTablesRows(lifecycle, decomposition);
+
+                OnParameterChanged(null, null);
             });
         }
 
-        private void SetParameters(int loc, IEnumerable<Driver> drivers)
+        private void SetParameters(int loc, int budget, IEnumerable<Driver> drivers)
         {
             nudLOC.Value = calculator.LOC = loc;
+            calculator.Budget = budget;
+
             foreach (var driver in drivers)
             {
                 switch (driver.Name)
@@ -207,10 +229,10 @@ namespace Lab06.Forms
                 CellTemplate = new DataGridViewTextBoxCell()
             };
 
-            dgvLaborTime.Columns.Add(colTaskLT);
-            dgvLaborTime.Columns.Add(colLabor);
-            dgvLaborTime.Columns.Add(colTime);
-            dgvLaborTime.AllowUserToAddRows = false;
+            dgvLifecycle.Columns.Add(colTaskLT);
+            dgvLifecycle.Columns.Add(colLabor);
+            dgvLifecycle.Columns.Add(colTime);
+            dgvLifecycle.AllowUserToAddRows = false;
 
             var colTaskDC = new DataGridViewColumn
             {
@@ -237,18 +259,127 @@ namespace Lab06.Forms
             dgvDecomposition.AllowUserToAddRows = false;
         }
 
-        public void SetTablesRows(IEnumerable<Task> lifecycle, IEnumerable<Task> decomposition)
+        public void CreateCountTables()
         {
-            dgvLaborTime.Rows.Clear();
+            var colTaskLT = new DataGridViewColumn
+            {
+                HeaderText = @"Вид деятельности",
+                Width = 200,
+                ReadOnly = true,
+                Name = "Task",
+                Frozen = true,
+                CellTemplate = new DataGridViewTextBoxCell()
+            };
+
+            var colLabor = new DataGridViewColumn
+            {
+                HeaderText = @"Работа",
+                Width = 100,
+                ReadOnly = true,
+                Name = "Labor",
+                Frozen = true,
+                CellTemplate = new DataGridViewTextBoxCell()
+            };
+
+            var colTime = new DataGridViewColumn
+            {
+                HeaderText = @"Время",
+                Width = 100,
+                ReadOnly = true,
+                Name = "Time",
+                Frozen = true,
+                CellTemplate = new DataGridViewTextBoxCell()
+            };
+
+            dgvLifecycleCount.Columns.Add(colTaskLT);
+            dgvLifecycleCount.Columns.Add(colLabor);
+            dgvLifecycleCount.Columns.Add(colTime);
+            dgvLifecycleCount.AllowUserToAddRows = false;
+
+            var colTaskDC = new DataGridViewColumn
+            {
+                HeaderText = @"Вид деятельности",
+                Width = 200,
+                ReadOnly = true,
+                Name = "Task",
+                Frozen = true,
+                CellTemplate = new DataGridViewTextBoxCell()
+            };
+
+            var colBudget = new DataGridViewColumn
+            {
+                HeaderText = @"Бюджет",
+                Width = 200,
+                ReadOnly = true,
+                Name = "Budget",
+                Frozen = true,
+                CellTemplate = new DataGridViewTextBoxCell()
+            };
+
+            dgvDecompositionCount.Columns.Add(colTaskDC);
+            dgvDecompositionCount.Columns.Add(colBudget);
+            dgvDecompositionCount.AllowUserToAddRows = false;
+        }
+
+        public void SetTablesRows(List<Task> lifecycle, List<Task> decomposition)
+        {
+            calculator.Lifecycle = lifecycle;
+            calculator.Decomposition = decomposition;
+
+            dgvLifecycle.Rows.Clear();
             foreach (var task in lifecycle)
             {
-                dgvLaborTime.Rows.Add(task.Name, task.LaborPercent, task.TimePercent);
+                dgvLifecycle.Rows.Add(task.Name, task.LaborPercent, task.TimePercent);
             }
 
             dgvDecomposition.Rows.Clear();
             foreach (var task in decomposition)
             {
                 dgvDecomposition.Rows.Add(task.Name, task.BudgetPercent);
+            }
+
+            dgvLifecycleCount.Rows.Clear();
+            foreach (var task in lifecycle)
+            {
+                dgvLifecycleCount.Rows.Add(task.Name, 0, 0);
+            }
+
+            dgvDecompositionCount.Rows.Clear();
+            foreach (var task in decomposition)
+            {
+                dgvDecompositionCount.Rows.Add(task.Name, 0);
+            }
+        }
+
+        public void UpdateTables(List<(double, double)> lifecycleCount, List<double> decompositionCount)
+        {
+            for (var i = 0; i < lifecycleCount.Count; ++i)
+            {
+                dgvLifecycleCount["labor", i].Value = lifecycleCount[i].Item1;
+                dgvLifecycleCount["time", i].Value = lifecycleCount[i].Item2;
+            }
+
+            for (var i = 0; i < decompositionCount.Count; ++i)
+            {
+                dgvDecompositionCount["budget", i].Value = decompositionCount[i];
+            }
+        }
+
+        public void UpdateCharts(List<(double, double)> lifecycleCount, List<int> staffCount)
+        {
+            chrtStaff.Series.Clear();
+            chrtStaff.Series.Add("Количество сотрудников");
+            chrtStaff.Series[0].ChartType = SeriesChartType.Spline;
+            chrtStaff.Series[0].Color = Color.Red;
+
+            var index = 0;
+            for (var i = 0; i < staffCount.Count; ++i)
+            {
+                var iterationLength = (int)Math.Ceiling(lifecycleCount[i].Item2);
+                for (var j = 0; j < iterationLength; ++index, ++j)
+                {
+                    chrtStaff.Series[0].Points.AddXY(index, staffCount[i]);
+                }
             }
         }
     }

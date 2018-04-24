@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <project name="project1">
-  <loc value="10000" />
+  <loc value="10000"/>
+  <budget value="1000000000"/>
   <drivers>
     <driver name="RELY" value="100"></driver>
     <driver name="DATA" value="25"></driver>

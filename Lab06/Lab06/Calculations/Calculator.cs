@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Lab06.IO;
 
 namespace Lab06.Calculations
 {
@@ -26,6 +28,7 @@ namespace Lab06.Calculations
         public double SCED { get; set; }
 
         public int LOC { get; set; }
+        public int Budget { get; set; }
 
         public CalculatorMode Mode { get; set; }
 
@@ -64,6 +67,7 @@ namespace Lab06.Calculations
             var labor = c1 * EAF * Math.Pow(KLOC, p1);
             var time = c2 * Math.Pow(labor, p2);
 
+            ltCache = (labor, time);
             return (labor, time);
         }
 
@@ -72,5 +76,62 @@ namespace Lab06.Calculations
                               VEXP * LEXP * MODP * TOOL * SCED;
 
         private double KLOC => LOC / 1000.0;
+
+        public List<Task> Lifecycle { get; set; } = new List<Task>();
+        public List<Task> Decomposition { get; set; } = new List<Task>();
+
+        public List<(double, double)> CalculateLifecycle(bool useCache = true)
+        {
+            (var totalLabor, var totalTime) = ltCache;
+            if (!useCache)
+            {
+                (totalLabor, totalTime) = CalculateLaborAndTime();
+            }
+
+            var result = new List<(double, double)>();
+            foreach (var task in Lifecycle)
+            {
+                var labor = totalLabor * (task.LaborPercent / 100.0);
+                var time = totalTime * (task.TimePercent / 100.0);
+                result.Add((labor, time));
+            }
+
+            lcCache = result;
+            return result;
+        }
+
+        public List<double> CalculateDecomposition(bool useCache = true)
+        {
+            var result = new List<double>();
+            foreach (var task in Decomposition)
+            {
+                var budget = Budget * (task.BudgetPercent / 100.0);
+                result.Add(budget);
+            }
+
+            return result;
+        }
+
+        public List<int> CountStaff(bool useCache = true)
+        {
+            var lifecycleCount = lcCache;
+            if (lcCache == null || !useCache)
+            {
+                lifecycleCount = CalculateLifecycle(false);
+            }
+
+            var result = new List<int>();
+            const double minTime = 1e-5;
+            foreach (var task in lifecycleCount)
+            {
+                var staff = (int) (task.Item2 > minTime ? task.Item1 / task.Item2 : 0);
+                result.Add(staff);
+            }
+
+            return result;
+        }
+
+        private (double, double) ltCache = (0, 0);
+        private List<(double, double)> lcCache = null;
     }
 }
