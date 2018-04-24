@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.gbVisualization = new System.Windows.Forms.GroupBox();
             this.tctlVisualization = new System.Windows.Forms.TabControl();
             this.tpgTables = new System.Windows.Forms.TabPage();
@@ -81,6 +81,8 @@
             this.gbResults = new System.Windows.Forms.GroupBox();
             this.lblTotalTime = new System.Windows.Forms.Label();
             this.lblTotalLabor = new System.Windows.Forms.Label();
+            this.btnLoadFile = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.gbVisualization.SuspendLayout();
             this.tctlVisualization.SuspendLayout();
             this.tpgTables.SuspendLayout();
@@ -191,17 +193,17 @@
             // 
             // chrtStaff
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chrtStaff.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chrtStaff.Legends.Add(legend2);
+            chartArea3.Name = "ChartArea1";
+            this.chrtStaff.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chrtStaff.Legends.Add(legend3);
             this.chrtStaff.Location = new System.Drawing.Point(6, 19);
             this.chrtStaff.Name = "chrtStaff";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Legend = "Legend1";
-            series2.Name = "Число сотрудников";
-            this.chrtStaff.Series.Add(series2);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Legend = "Legend1";
+            series3.Name = "Число сотрудников";
+            this.chrtStaff.Series.Add(series3);
             this.chrtStaff.Size = new System.Drawing.Size(448, 300);
             this.chrtStaff.TabIndex = 1;
             // 
@@ -249,7 +251,7 @@
             this.gbParameters.Controls.Add(this.lblDATA);
             this.gbParameters.Controls.Add(this.ftbRELY);
             this.gbParameters.Controls.Add(this.lblRELY);
-            this.gbParameters.Location = new System.Drawing.Point(12, 12);
+            this.gbParameters.Location = new System.Drawing.Point(12, 49);
             this.gbParameters.Name = "gbParameters";
             this.gbParameters.Size = new System.Drawing.Size(274, 403);
             this.gbParameters.TabIndex = 0;
@@ -684,9 +686,9 @@
             // 
             this.gbResults.Controls.Add(this.lblTotalTime);
             this.gbResults.Controls.Add(this.lblTotalLabor);
-            this.gbResults.Location = new System.Drawing.Point(12, 421);
+            this.gbResults.Location = new System.Drawing.Point(12, 458);
             this.gbResults.Name = "gbResults";
-            this.gbResults.Size = new System.Drawing.Size(274, 128);
+            this.gbResults.Size = new System.Drawing.Size(274, 91);
             this.gbResults.TabIndex = 3;
             this.gbResults.TabStop = false;
             this.gbResults.Text = "Результат:";
@@ -709,11 +711,32 @@
             this.lblTotalLabor.TabIndex = 0;
             this.lblTotalLabor.Text = "Трудозатраты: ---";
             // 
+            // btnLoadFile
+            // 
+            this.btnLoadFile.Location = new System.Drawing.Point(12, 12);
+            this.btnLoadFile.Name = "btnLoadFile";
+            this.btnLoadFile.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadFile.TabIndex = 4;
+            this.btnLoadFile.Text = "Открыть...";
+            this.btnLoadFile.UseVisualStyleBackColor = true;
+            this.btnLoadFile.Click += new System.EventHandler(this.btnLoadFile_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(93, 12);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 5;
+            this.btnRefresh.Text = "Обновить";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.btnLoadFile);
             this.Controls.Add(this.gbResults);
             this.Controls.Add(this.gbVisualization);
             this.Controls.Add(this.gbParameters);
@@ -808,6 +831,8 @@
         private System.Windows.Forms.GroupBox gbResults;
         private System.Windows.Forms.Label lblTotalLabor;
         private System.Windows.Forms.Label lblTotalTime;
+        private System.Windows.Forms.Button btnLoadFile;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
 

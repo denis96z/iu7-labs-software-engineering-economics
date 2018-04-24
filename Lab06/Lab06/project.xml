@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<project name="project1">
+  <loc value="10000" />
+  <drivers>
+    <driver name="RELY" value="100"></driver>
+    <driver name="DATA" value="25"></driver>
+  </drivers>
+  <lifecycle>
+    <task>
+      <name>Планирование и определение требований</name>
+      <laborpercent overhead="true">8</laborpercent>
+      <timepercent overhead="true">36</timepercent>
+    </task>
+    <task>
+      <name>Проектирование продукта</name>
+      <laborpercent>18</laborpercent>
+      <timepercent>36</timepercent>
+    </task>
+    <task>
+      <name>Детальное проектирование</name>
+      <laborpercent>25</laborpercent>
+      <timepercent>18</timepercent>
+    </task>
+    <task>
+      <name>Кодирование и тестирование отдельных модулей</name>
+      <laborpercent>26</laborpercent>
+      <timepercent>18</timepercent>
+    </task>
+    <task>
+      <name>Интеграция и тестирование</name>
+      <laborpercent>31</laborpercent>
+      <timepercent>28</timepercent>
+    </task>
+  </lifecycle>
+  <decomposition>
+    <task>
+      <name>Анализ требований</name>
+      <budget>4</budget>
+    </task>
+    <task>
+      <name>Проектирование продукта</name>
+      <budget>12</budget>
+    </task>
+    <task>
+      <name>Программирование</name>
+      <budget>44</budget>
+    </task>
+    <task>
+      <name>Планирование тестирования</name>
+      <budget>6</budget>
+    </task>
+    <task>
+      <name>Верификация и аттестация</name>
+      <budget>14</budget>
+    </task>
+    <task>
+      <name>Канцелярия проекта</name>
+      <budget>7</budget>
+    </task>
+    <task>
+      <name>Управление конфигурацией и обеспечение качества</name>
+      <budget>7</budget>
+    </task>
+    <task>
+      <name>Создание руководств</name>
+      <budget>6</budget>
+    </task>
+  </decomposition>
+</project>
