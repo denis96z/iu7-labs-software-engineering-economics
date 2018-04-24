@@ -28,7 +28,7 @@ namespace Lab06.Calculations
         public double SCED { get; set; }
 
         public int LOC { get; set; }
-        public int Budget { get; set; }
+        public int ManMonthCost { get; set; }
 
         public CalculatorMode Mode { get; set; }
 
@@ -100,16 +100,9 @@ namespace Lab06.Calculations
             return result;
         }
 
-        public List<double> CalculateDecomposition(bool useCache = true)
+        public int CalculateCost(bool useCache = true)
         {
-            var result = new List<double>();
-            foreach (var task in Decomposition)
-            {
-                var budget = Budget * (task.BudgetPercent / 100.0);
-                result.Add(budget);
-            }
-
-            return result;
+            return (int)Math.Round(ManMonthCost * ltCache.Item1);
         }
 
         public List<int> CountStaff(bool useCache = true)

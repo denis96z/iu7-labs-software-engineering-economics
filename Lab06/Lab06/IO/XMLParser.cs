@@ -36,10 +36,10 @@ namespace Lab06.IO
             return int.Parse(value.Value);
         }
 
-        public int LoadBudget()
+        public int LoadManMonthCost()
         {
             if (xdoc.Root == null) throw new IOException();
-            var loc = xdoc.Root.Element("budget") ?? throw new IOException();
+            var loc = xdoc.Root.Element("manmonthcost") ?? throw new IOException();
             var value = loc.Attribute("value") ?? throw new IOException();
             return int.Parse(value.Value);
         }

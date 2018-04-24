@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.gbVisualization = new System.Windows.Forms.GroupBox();
             this.tctlVisualization = new System.Windows.Forms.TabControl();
             this.tpgInTables = new System.Windows.Forms.TabPage();
@@ -38,6 +38,9 @@
             this.lblDecomposition = new System.Windows.Forms.Label();
             this.dgvLifecycle = new System.Windows.Forms.DataGridView();
             this.lblLifecycle = new System.Windows.Forms.Label();
+            this.tabOutTables = new System.Windows.Forms.TabPage();
+            this.dgvLifecycleCount = new System.Windows.Forms.DataGridView();
+            this.lblLifecycleCount = new System.Windows.Forms.Label();
             this.tpgGraphs = new System.Windows.Forms.TabPage();
             this.chrtStaff = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lblStaff = new System.Windows.Forms.Label();
@@ -82,17 +85,15 @@
             this.lblTotalTime = new System.Windows.Forms.Label();
             this.lblTotalLabor = new System.Windows.Forms.Label();
             this.btnLoadFile = new System.Windows.Forms.Button();
-            this.tabOutTables = new System.Windows.Forms.TabPage();
-            this.dgvDecompositionCount = new System.Windows.Forms.DataGridView();
-            this.lblOutDecomposition = new System.Windows.Forms.Label();
-            this.dgvLifecycleCount = new System.Windows.Forms.DataGridView();
-            this.lblLifecycleCount = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.lblBudget = new System.Windows.Forms.Label();
             this.gbVisualization.SuspendLayout();
             this.tctlVisualization.SuspendLayout();
             this.tpgInTables.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDecomposition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLifecycle)).BeginInit();
+            this.tabOutTables.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLifecycleCount)).BeginInit();
             this.tpgGraphs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrtStaff)).BeginInit();
             this.gbParameters.SuspendLayout();
@@ -114,9 +115,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ftbDATA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ftbRELY)).BeginInit();
             this.gbResults.SuspendLayout();
-            this.tabOutTables.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDecompositionCount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLifecycleCount)).BeginInit();
             this.SuspendLayout();
             // 
             // gbVisualization
@@ -188,6 +186,34 @@
             this.lblLifecycle.TabIndex = 0;
             this.lblLifecycle.Text = "Жизненный цикл:";
             // 
+            // tabOutTables
+            // 
+            this.tabOutTables.Controls.Add(this.dgvLifecycleCount);
+            this.tabOutTables.Controls.Add(this.lblLifecycleCount);
+            this.tabOutTables.Location = new System.Drawing.Point(4, 22);
+            this.tabOutTables.Name = "tabOutTables";
+            this.tabOutTables.Size = new System.Drawing.Size(460, 489);
+            this.tabOutTables.TabIndex = 2;
+            this.tabOutTables.Text = "Распределение";
+            this.tabOutTables.UseVisualStyleBackColor = true;
+            // 
+            // dgvLifecycleCount
+            // 
+            this.dgvLifecycleCount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLifecycleCount.Location = new System.Drawing.Point(8, 20);
+            this.dgvLifecycleCount.Name = "dgvLifecycleCount";
+            this.dgvLifecycleCount.Size = new System.Drawing.Size(448, 220);
+            this.dgvLifecycleCount.TabIndex = 5;
+            // 
+            // lblLifecycleCount
+            // 
+            this.lblLifecycleCount.AutoSize = true;
+            this.lblLifecycleCount.Location = new System.Drawing.Point(5, 4);
+            this.lblLifecycleCount.Name = "lblLifecycleCount";
+            this.lblLifecycleCount.Size = new System.Drawing.Size(98, 13);
+            this.lblLifecycleCount.TabIndex = 4;
+            this.lblLifecycleCount.Text = "Жизненный цикл:";
+            // 
             // tpgGraphs
             // 
             this.tpgGraphs.Controls.Add(this.chrtStaff);
@@ -202,17 +228,17 @@
             // 
             // chrtStaff
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chrtStaff.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chrtStaff.Legends.Add(legend3);
+            chartArea2.Name = "ChartArea1";
+            this.chrtStaff.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chrtStaff.Legends.Add(legend2);
             this.chrtStaff.Location = new System.Drawing.Point(6, 19);
             this.chrtStaff.Name = "chrtStaff";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Legend = "Legend1";
-            series3.Name = "Число сотрудников";
-            this.chrtStaff.Series.Add(series3);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Legend = "Legend1";
+            series2.Name = "Число сотрудников";
+            this.chrtStaff.Series.Add(series2);
             this.chrtStaff.Size = new System.Drawing.Size(448, 300);
             this.chrtStaff.TabIndex = 1;
             // 
@@ -693,6 +719,7 @@
             // 
             // gbResults
             // 
+            this.gbResults.Controls.Add(this.lblBudget);
             this.gbResults.Controls.Add(this.lblTotalTime);
             this.gbResults.Controls.Add(this.lblTotalLabor);
             this.gbResults.Location = new System.Drawing.Point(12, 458);
@@ -705,7 +732,7 @@
             // lblTotalTime
             // 
             this.lblTotalTime.AutoSize = true;
-            this.lblTotalTime.Location = new System.Drawing.Point(6, 60);
+            this.lblTotalTime.Location = new System.Drawing.Point(6, 42);
             this.lblTotalTime.Name = "lblTotalTime";
             this.lblTotalTime.Size = new System.Drawing.Size(55, 13);
             this.lblTotalTime.TabIndex = 1;
@@ -714,7 +741,7 @@
             // lblTotalLabor
             // 
             this.lblTotalLabor.AutoSize = true;
-            this.lblTotalLabor.Location = new System.Drawing.Point(6, 27);
+            this.lblTotalLabor.Location = new System.Drawing.Point(6, 16);
             this.lblTotalLabor.Name = "lblTotalLabor";
             this.lblTotalLabor.Size = new System.Drawing.Size(94, 13);
             this.lblTotalLabor.TabIndex = 0;
@@ -730,57 +757,19 @@
             this.btnLoadFile.UseVisualStyleBackColor = true;
             this.btnLoadFile.Click += new System.EventHandler(this.btnLoadFile_Click);
             // 
-            // tabOutTables
-            // 
-            this.tabOutTables.Controls.Add(this.dgvDecompositionCount);
-            this.tabOutTables.Controls.Add(this.lblOutDecomposition);
-            this.tabOutTables.Controls.Add(this.dgvLifecycleCount);
-            this.tabOutTables.Controls.Add(this.lblLifecycleCount);
-            this.tabOutTables.Location = new System.Drawing.Point(4, 22);
-            this.tabOutTables.Name = "tabOutTables";
-            this.tabOutTables.Size = new System.Drawing.Size(460, 489);
-            this.tabOutTables.TabIndex = 2;
-            this.tabOutTables.Text = "Распределение";
-            this.tabOutTables.UseVisualStyleBackColor = true;
-            // 
-            // dgvDecompositionCount
-            // 
-            this.dgvDecompositionCount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDecompositionCount.Location = new System.Drawing.Point(8, 259);
-            this.dgvDecompositionCount.Name = "dgvDecompositionCount";
-            this.dgvDecompositionCount.Size = new System.Drawing.Size(448, 225);
-            this.dgvDecompositionCount.TabIndex = 7;
-            // 
-            // lblOutDecomposition
-            // 
-            this.lblOutDecomposition.AutoSize = true;
-            this.lblOutDecomposition.Location = new System.Drawing.Point(8, 243);
-            this.lblOutDecomposition.Name = "lblOutDecomposition";
-            this.lblOutDecomposition.Size = new System.Drawing.Size(81, 13);
-            this.lblOutDecomposition.TabIndex = 6;
-            this.lblOutDecomposition.Text = "Деомпозиция:";
-            // 
-            // dgvLifecycleCount
-            // 
-            this.dgvLifecycleCount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLifecycleCount.Location = new System.Drawing.Point(8, 20);
-            this.dgvLifecycleCount.Name = "dgvLifecycleCount";
-            this.dgvLifecycleCount.Size = new System.Drawing.Size(448, 220);
-            this.dgvLifecycleCount.TabIndex = 5;
-            // 
-            // lblLifecycleCount
-            // 
-            this.lblLifecycleCount.AutoSize = true;
-            this.lblLifecycleCount.Location = new System.Drawing.Point(5, 4);
-            this.lblLifecycleCount.Name = "lblLifecycleCount";
-            this.lblLifecycleCount.Size = new System.Drawing.Size(98, 13);
-            this.lblLifecycleCount.TabIndex = 4;
-            this.lblLifecycleCount.Text = "Жизненный цикл:";
-            // 
             // openFileDialog
             // 
             this.openFileDialog.DefaultExt = "xml";
             this.openFileDialog.FileName = "Открыть файл...";
+            // 
+            // lblBudget
+            // 
+            this.lblBudget.AutoSize = true;
+            this.lblBudget.Location = new System.Drawing.Point(6, 68);
+            this.lblBudget.Name = "lblBudget";
+            this.lblBudget.Size = new System.Drawing.Size(62, 13);
+            this.lblBudget.TabIndex = 2;
+            this.lblBudget.Text = "Бюджет: ---";
             // 
             // MainForm
             // 
@@ -802,6 +791,9 @@
             this.tpgInTables.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDecomposition)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLifecycle)).EndInit();
+            this.tabOutTables.ResumeLayout(false);
+            this.tabOutTables.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLifecycleCount)).EndInit();
             this.tpgGraphs.ResumeLayout(false);
             this.tpgGraphs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrtStaff)).EndInit();
@@ -827,10 +819,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ftbRELY)).EndInit();
             this.gbResults.ResumeLayout(false);
             this.gbResults.PerformLayout();
-            this.tabOutTables.ResumeLayout(false);
-            this.tabOutTables.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDecompositionCount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLifecycleCount)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -888,11 +876,10 @@
         private System.Windows.Forms.Label lblTotalTime;
         private System.Windows.Forms.Button btnLoadFile;
         private System.Windows.Forms.TabPage tabOutTables;
-        private System.Windows.Forms.DataGridView dgvDecompositionCount;
-        private System.Windows.Forms.Label lblOutDecomposition;
         private System.Windows.Forms.DataGridView dgvLifecycleCount;
         private System.Windows.Forms.Label lblLifecycleCount;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Label lblBudget;
     }
 }
 

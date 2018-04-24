@@ -85,15 +85,16 @@ namespace Lab06.Forms
                 ParseParameters();
 
                 (var labor, var time) = calculator.CalculateLaborAndTime();
+                var cost = calculator.CalculateCost();
 
-                var lifecycleCount = calculator.CalculateLifecycle();
-                var decompositionCount = calculator.CalculateDecomposition();
+                var lifecycleCount = calculator.CalculateLifecycle();    
                 var staffCount = calculator.CountStaff();
 
                 lblTotalLabor.Text = @"Трудозатраты: " + labor.ToString(CultureInfo.InvariantCulture);
                 lblTotalTime.Text = @"Время: " + time.ToString(CultureInfo.InvariantCulture);
+                lblBudget.Text = @"Бюджет: " + cost.ToString(CultureInfo.InvariantCulture);
 
-                UpdateTables(lifecycleCount, decompositionCount);
+                UpdateTables(lifecycleCount);
                 UpdateCharts(lifecycleCount, staffCount);
             });
         }
@@ -110,9 +111,9 @@ namespace Lab06.Forms
                 var parser = new XmlParser(openFileDialog.FileName);
 
                 var loc = parser.LoadLOC();
-                var budget = parser.LoadBudget();
+                var manMonthCost = parser.LoadManMonthCost();
                 var drivers = parser.LoadDrivers();
-                SetParameters(loc, budget, drivers);
+                SetParameters(loc, manMonthCost, drivers);
 
                 var lifecycle = parser.LoadLifecycle();
                 var decomposition = parser.LoadDecomposition();
@@ -122,10 +123,10 @@ namespace Lab06.Forms
             });
         }
 
-        private void SetParameters(int loc, int budget, IEnumerable<Driver> drivers)
+        private void SetParameters(int loc, int manMonthCost, IEnumerable<Driver> drivers)
         {
             nudLOC.Value = calculator.LOC = loc;
-            calculator.Budget = budget;
+            calculator.ManMonthCost = manMonthCost;
 
             foreach (var driver in drivers)
             {
@@ -295,30 +296,6 @@ namespace Lab06.Forms
             dgvLifecycleCount.Columns.Add(colLabor);
             dgvLifecycleCount.Columns.Add(colTime);
             dgvLifecycleCount.AllowUserToAddRows = false;
-
-            var colTaskDC = new DataGridViewColumn
-            {
-                HeaderText = @"Вид деятельности",
-                Width = 200,
-                ReadOnly = true,
-                Name = "Task",
-                Frozen = true,
-                CellTemplate = new DataGridViewTextBoxCell()
-            };
-
-            var colBudget = new DataGridViewColumn
-            {
-                HeaderText = @"Бюджет",
-                Width = 200,
-                ReadOnly = true,
-                Name = "Budget",
-                Frozen = true,
-                CellTemplate = new DataGridViewTextBoxCell()
-            };
-
-            dgvDecompositionCount.Columns.Add(colTaskDC);
-            dgvDecompositionCount.Columns.Add(colBudget);
-            dgvDecompositionCount.AllowUserToAddRows = false;
         }
 
         public void SetTablesRows(List<Task> lifecycle, List<Task> decomposition)
@@ -343,25 +320,14 @@ namespace Lab06.Forms
             {
                 dgvLifecycleCount.Rows.Add(task.Name, 0, 0);
             }
-
-            dgvDecompositionCount.Rows.Clear();
-            foreach (var task in decomposition)
-            {
-                dgvDecompositionCount.Rows.Add(task.Name, 0);
-            }
         }
 
-        public void UpdateTables(List<(double, double)> lifecycleCount, List<double> decompositionCount)
+        public void UpdateTables(List<(double, double)> lifecycleCount)
         {
             for (var i = 0; i < lifecycleCount.Count; ++i)
             {
                 dgvLifecycleCount["labor", i].Value = lifecycleCount[i].Item1;
                 dgvLifecycleCount["time", i].Value = lifecycleCount[i].Item2;
-            }
-
-            for (var i = 0; i < decompositionCount.Count; ++i)
-            {
-                dgvDecompositionCount["budget", i].Value = decompositionCount[i];
             }
         }
 
