@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Lab07.Calculations
 {
@@ -58,6 +60,51 @@ namespace Lab07.Calculations
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
+            }
+        }
+    }
+
+    public class LaborCoeffs : IEnumerable
+    {
+        private readonly List<LaborCoeff> _coeffs = new List<LaborCoeff>();
+
+        public void Add(LaborCoeff coeff)
+        {
+            _coeffs.Add(coeff);
+        }
+
+        public void AddRange(params LaborCoeff[] coeffs)
+        {
+            _coeffs.AddRange(coeffs);
+        }
+
+        public void Remove(string name)
+        {
+            foreach (var coeff in _coeffs)
+            {
+                if (coeff.Name != name) continue;
+                _coeffs.Remove(coeff);
+                break;
+            }
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return _coeffs.GetEnumerator();
+        }
+
+        public LaborCoeff this[string name]
+        {
+            get
+            {
+                foreach (var coeff in _coeffs)
+                {
+                    if (coeff.Name == name)
+                    {
+                        return coeff;
+                    }
+                }
+                throw new ArgumentOutOfRangeException();
             }
         }
     }

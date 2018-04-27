@@ -2,12 +2,12 @@
 
 namespace Lab07.IO.Config
 {
-    public class LaborCoeffLoader
+    public class LaborCoeffsLoader
     {
-        public LaborCoeff[] GetDefault()
+        public LaborCoeffs GetDefault()
         {
-            return new[]
-            {
+            var coeffs = new LaborCoeffs();
+            coeffs.AddRange(
                 new LaborCoeff("PERS")
                 {
                     VeryLowValue = 1.62,
@@ -70,8 +70,8 @@ namespace Lab07.IO.Config
                     HighValue = 1.00,
                     VeryHighValue = 1.00,
                     SuperHighValue = null
-                }
-            };
+                });
+            return coeffs;
         }
     }
 }

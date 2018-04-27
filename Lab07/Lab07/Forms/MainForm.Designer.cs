@@ -52,8 +52,18 @@
             this.miHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.miShowHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.tcPages.SuspendLayout();
+            this.tpProjectParameters.SuspendLayout();
             this.msMainMenu.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcPages
@@ -67,6 +77,7 @@
             // 
             // tpProjectParameters
             // 
+            this.tpProjectParameters.Controls.Add(this.groupBox1);
             this.tpProjectParameters.Location = new System.Drawing.Point(4, 22);
             this.tpProjectParameters.Name = "tpProjectParameters";
             this.tpProjectParameters.Padding = new System.Windows.Forms.Padding(3);
@@ -161,47 +172,47 @@
             // 
             this.miCancel.Enabled = false;
             this.miCancel.Name = "miCancel";
-            this.miCancel.Size = new System.Drawing.Size(152, 22);
+            this.miCancel.Size = new System.Drawing.Size(139, 22);
             this.miCancel.Text = "Отменить";
             // 
             // miRevert
             // 
             this.miRevert.Enabled = false;
             this.miRevert.Name = "miRevert";
-            this.miRevert.Size = new System.Drawing.Size(152, 22);
+            this.miRevert.Size = new System.Drawing.Size(139, 22);
             this.miRevert.Text = "Вернуть";
             // 
             // miLine3
             // 
             this.miLine3.Name = "miLine3";
-            this.miLine3.Size = new System.Drawing.Size(149, 6);
+            this.miLine3.Size = new System.Drawing.Size(136, 6);
             // 
             // miCut
             // 
             this.miCut.Enabled = false;
             this.miCut.Name = "miCut";
-            this.miCut.Size = new System.Drawing.Size(152, 22);
+            this.miCut.Size = new System.Drawing.Size(139, 22);
             this.miCut.Text = "Вырезать";
             // 
             // miCopy
             // 
             this.miCopy.Enabled = false;
             this.miCopy.Name = "miCopy";
-            this.miCopy.Size = new System.Drawing.Size(152, 22);
+            this.miCopy.Size = new System.Drawing.Size(139, 22);
             this.miCopy.Text = "Копировать";
             // 
             // miPaste
             // 
             this.miPaste.Enabled = false;
             this.miPaste.Name = "miPaste";
-            this.miPaste.Size = new System.Drawing.Size(152, 22);
+            this.miPaste.Size = new System.Drawing.Size(139, 22);
             this.miPaste.Text = "Вставить";
             // 
             // miDelete
             // 
             this.miDelete.Enabled = false;
             this.miDelete.Name = "miDelete";
-            this.miDelete.Size = new System.Drawing.Size(152, 22);
+            this.miDelete.Size = new System.Drawing.Size(139, 22);
             this.miDelete.Text = "Удалить";
             // 
             // miView
@@ -242,6 +253,85 @@
             this.miAbout.Size = new System.Drawing.Size(179, 22);
             this.miAbout.Text = "О программе";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 258);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Множители трудоемкости:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "PERS";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "PERS";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 46);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "PERS";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 59);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "PERS";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 72);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "PERS";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 85);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(36, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "PERS";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 98);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(36, 13);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "PERS";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,8 +343,11 @@
             this.Name = "MainForm";
             this.Text = "Лабораторная работа №7";
             this.tcPages.ResumeLayout(false);
+            this.tpProjectParameters.ResumeLayout(false);
             this.msMainMenu.ResumeLayout(false);
             this.msMainMenu.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,6 +379,14 @@
         private System.Windows.Forms.ToolStripMenuItem miExit;
         private System.Windows.Forms.ToolStripSeparator miLine3;
         private System.Windows.Forms.ToolStripMenuItem miSettings;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
 
