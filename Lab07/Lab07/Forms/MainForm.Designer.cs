@@ -68,6 +68,9 @@
             this.miHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.miShowHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.tpResults = new System.Windows.Forms.TabPage();
+            this.lblTotalLabor = new System.Windows.Forms.Label();
+            this.lblTotalTime = new System.Windows.Forms.Label();
             this.tcPages.SuspendLayout();
             this.tpProjectParameters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSLOC)).BeginInit();
@@ -75,12 +78,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductParameters)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaborCoeffs)).BeginInit();
             this.msMainMenu.SuspendLayout();
+            this.tpResults.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcPages
             // 
             this.tcPages.Controls.Add(this.tpProjectParameters);
             this.tcPages.Controls.Add(this.tpProjectWorks);
+            this.tcPages.Controls.Add(this.tpResults);
             this.tcPages.Location = new System.Drawing.Point(12, 27);
             this.tcPages.Name = "tcPages";
             this.tcPages.SelectedIndex = 0;
@@ -426,6 +431,35 @@
             this.miAbout.Size = new System.Drawing.Size(179, 22);
             this.miAbout.Text = "О программе";
             // 
+            // tpResults
+            // 
+            this.tpResults.Controls.Add(this.lblTotalTime);
+            this.tpResults.Controls.Add(this.lblTotalLabor);
+            this.tpResults.Location = new System.Drawing.Point(4, 22);
+            this.tpResults.Name = "tpResults";
+            this.tpResults.Size = new System.Drawing.Size(752, 496);
+            this.tpResults.TabIndex = 2;
+            this.tpResults.Text = "Результаты";
+            this.tpResults.UseVisualStyleBackColor = true;
+            // 
+            // lblTotalLabor
+            // 
+            this.lblTotalLabor.AutoSize = true;
+            this.lblTotalLabor.Location = new System.Drawing.Point(16, 18);
+            this.lblTotalLabor.Name = "lblTotalLabor";
+            this.lblTotalLabor.Size = new System.Drawing.Size(176, 13);
+            this.lblTotalLabor.TabIndex = 0;
+            this.lblTotalLabor.Text = "Общая трудоемкость (чел./мес.):";
+            // 
+            // lblTotalTime
+            // 
+            this.lblTotalTime.AutoSize = true;
+            this.lblTotalTime.Location = new System.Drawing.Point(19, 50);
+            this.lblTotalTime.Name = "lblTotalTime";
+            this.lblTotalTime.Size = new System.Drawing.Size(112, 13);
+            this.lblTotalTime.TabIndex = 1;
+            this.lblTotalTime.Text = "Общее время (мес.):";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -448,6 +482,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaborCoeffs)).EndInit();
             this.msMainMenu.ResumeLayout(false);
             this.msMainMenu.PerformLayout();
+            this.tpResults.ResumeLayout(false);
+            this.tpResults.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -495,6 +531,9 @@
         private System.Windows.Forms.TabPage tpProjectWorks;
         private System.Windows.Forms.Label lblKSLOC;
         private System.Windows.Forms.NumericUpDown nudSLOC;
+        private System.Windows.Forms.TabPage tpResults;
+        private System.Windows.Forms.Label lblTotalLabor;
+        private System.Windows.Forms.Label lblTotalTime;
     }
 }
 

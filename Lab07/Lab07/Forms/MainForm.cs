@@ -13,10 +13,12 @@ namespace Lab07.Forms
         {
             InitializeComponent();
 
-            LoadKsloc();
             LoadLaborCoeffs();
             LoadProductParameters();
             LoadFactors();
+            LoadKsloc();
+
+            PerformCalculations();
         }
 
         private void LoadKsloc()
@@ -55,11 +57,24 @@ namespace Lab07.Forms
             });
         }
 
+        public void PerformCalculations()
+        {
+            PerformAction(() =>
+            {
+                var totalLabor = _model.CalculateTotalLabor();
+                lblTotalLabor.Text = @"Общая трудоемкость(чел./ мес.): " + totalLabor;
+
+                var totalTime = _model.CalculateTotalTime();
+                lblTotalTime.Text = @"Общее время(мес.):" + totalTime;
+            });
+        }
+
         private void NudSLOC_ValueChanged(object sender, EventArgs e)
         {
             PerformAction(() =>
             {
                 _model.Ksloc = (int)(nudSLOC.Value / 1000);
+                PerformCalculations();
             });
         }
 
@@ -86,6 +101,7 @@ namespace Lab07.Forms
 
                     _model.LaborCoeffs[name] = coeff;
                 }
+                PerformCalculations();
             });
         }
 
@@ -111,6 +127,7 @@ namespace Lab07.Forms
 
                     _model.ProductParameters[name] = parameter;
                 }
+                PerformCalculations();
             });
         }
 
@@ -138,6 +155,7 @@ namespace Lab07.Forms
                     _model.Factors[name] = factor;
                 }
                 UpdateFactorsTable();
+                PerformCalculations();
             });
         }
 
