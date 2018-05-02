@@ -57,6 +57,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="IO\Config\FactorsLoader.cs" />
+    <Compile Include="IO\Config\KslocLoader.cs" />
     <Compile Include="IO\Config\LaborCoeffsLoader.cs" />
     <Compile Include="IO\Config\ProductParametersLoader.cs" />
     <Compile Include="Program.cs" />

@@ -13,9 +13,19 @@ namespace Lab07.Forms
         {
             InitializeComponent();
 
+            LoadKsloc();
             LoadLaborCoeffs();
             LoadProductParameters();
             LoadFactors();
+        }
+
+        private void LoadKsloc()
+        {
+            PerformAction(() =>
+            {
+                _model.Ksloc = new KslocLoader().GetDefault();
+                nudSLOC.Value = _model.Ksloc * 1000;
+            });
         }
 
         private void LoadLaborCoeffs()
@@ -42,6 +52,14 @@ namespace Lab07.Forms
             {
                 _model.Factors = new FactorsLoader().GetDefault();
                 UpdateFactorsTable();
+            });
+        }
+
+        private void NudSLOC_ValueChanged(object sender, EventArgs e)
+        {
+            PerformAction(() =>
+            {
+                _model.Ksloc = (int)(nudSLOC.Value / 1000);
             });
         }
 
