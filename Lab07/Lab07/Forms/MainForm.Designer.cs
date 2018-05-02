@@ -30,6 +30,10 @@
         {
             this.tcPages = new System.Windows.Forms.TabControl();
             this.tpProjectParameters = new System.Windows.Forms.TabPage();
+            this.dgvProductParameters = new System.Windows.Forms.DataGridView();
+            this.dgvProductParametersName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvProductParametersValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblProductParameters = new System.Windows.Forms.Label();
             this.dgvLaborCoeffs = new System.Windows.Forms.DataGridView();
             this.dgvLaborCoeffsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLaborCoeffsValue = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -56,15 +60,17 @@
             this.miHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.miShowHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblProductParameters = new System.Windows.Forms.Label();
-            this.dgvProductParameters = new System.Windows.Forms.DataGridView();
-            this.dgvProductParametersName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvProductParametersValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblFactors = new System.Windows.Forms.Label();
+            this.dgvFactors = new System.Windows.Forms.DataGridView();
+            this.dgvFactorsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvFactorsLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvFactorsComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcPages.SuspendLayout();
             this.tpProjectParameters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductParameters)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaborCoeffs)).BeginInit();
             this.msMainMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductParameters)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFactors)).BeginInit();
             this.SuspendLayout();
             // 
             // tcPages
@@ -78,6 +84,8 @@
             // 
             // tpProjectParameters
             // 
+            this.tpProjectParameters.Controls.Add(this.dgvFactors);
+            this.tpProjectParameters.Controls.Add(this.lblFactors);
             this.tpProjectParameters.Controls.Add(this.dgvProductParameters);
             this.tpProjectParameters.Controls.Add(this.lblProductParameters);
             this.tpProjectParameters.Controls.Add(this.dgvLaborCoeffs);
@@ -90,6 +98,41 @@
             this.tpProjectParameters.Text = "Параметры";
             this.tpProjectParameters.UseVisualStyleBackColor = true;
             // 
+            // dgvProductParameters
+            // 
+            this.dgvProductParameters.AllowUserToAddRows = false;
+            this.dgvProductParameters.AllowUserToDeleteRows = false;
+            this.dgvProductParameters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductParameters.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvProductParametersName,
+            this.dgvProductParametersValue});
+            this.dgvProductParameters.Location = new System.Drawing.Point(274, 19);
+            this.dgvProductParameters.Name = "dgvProductParameters";
+            this.dgvProductParameters.Size = new System.Drawing.Size(472, 277);
+            this.dgvProductParameters.TabIndex = 3;
+            this.dgvProductParameters.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProductParameters_CellEndEdit);
+            // 
+            // dgvProductParametersName
+            // 
+            this.dgvProductParametersName.HeaderText = "Название";
+            this.dgvProductParametersName.Name = "dgvProductParametersName";
+            this.dgvProductParametersName.ReadOnly = true;
+            this.dgvProductParametersName.Width = 250;
+            // 
+            // dgvProductParametersValue
+            // 
+            this.dgvProductParametersValue.HeaderText = "Значение";
+            this.dgvProductParametersValue.Name = "dgvProductParametersValue";
+            // 
+            // lblProductParameters
+            // 
+            this.lblProductParameters.AutoSize = true;
+            this.lblProductParameters.Location = new System.Drawing.Point(271, 3);
+            this.lblProductParameters.Name = "lblProductParameters";
+            this.lblProductParameters.Size = new System.Drawing.Size(142, 13);
+            this.lblProductParameters.TabIndex = 2;
+            this.lblProductParameters.Text = "Характеристики продукта:";
+            // 
             // dgvLaborCoeffs
             // 
             this.dgvLaborCoeffs.AllowUserToAddRows = false;
@@ -100,7 +143,7 @@
             this.dgvLaborCoeffsValue});
             this.dgvLaborCoeffs.Location = new System.Drawing.Point(9, 19);
             this.dgvLaborCoeffs.Name = "dgvLaborCoeffs";
-            this.dgvLaborCoeffs.Size = new System.Drawing.Size(259, 316);
+            this.dgvLaborCoeffs.Size = new System.Drawing.Size(259, 277);
             this.dgvLaborCoeffs.TabIndex = 1;
             this.dgvLaborCoeffs.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLaborCoeffs_CellEndEdit);
             // 
@@ -298,40 +341,47 @@
             this.miAbout.Size = new System.Drawing.Size(179, 22);
             this.miAbout.Text = "О программе";
             // 
-            // lblProductParameters
+            // lblFactors
             // 
-            this.lblProductParameters.AutoSize = true;
-            this.lblProductParameters.Location = new System.Drawing.Point(271, 3);
-            this.lblProductParameters.Name = "lblProductParameters";
-            this.lblProductParameters.Size = new System.Drawing.Size(142, 13);
-            this.lblProductParameters.TabIndex = 2;
-            this.lblProductParameters.Text = "Характеристики продукта:";
+            this.lblFactors.AutoSize = true;
+            this.lblFactors.Location = new System.Drawing.Point(6, 299);
+            this.lblFactors.Name = "lblFactors";
+            this.lblFactors.Size = new System.Drawing.Size(58, 13);
+            this.lblFactors.TabIndex = 4;
+            this.lblFactors.Text = "Факторы:";
             // 
-            // dgvProductParameters
+            // dgvFactors
             // 
-            this.dgvProductParameters.AllowUserToAddRows = false;
-            this.dgvProductParameters.AllowUserToDeleteRows = false;
-            this.dgvProductParameters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductParameters.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvProductParametersName,
-            this.dgvProductParametersValue});
-            this.dgvProductParameters.Location = new System.Drawing.Point(274, 19);
-            this.dgvProductParameters.Name = "dgvProductParameters";
-            this.dgvProductParameters.Size = new System.Drawing.Size(472, 316);
-            this.dgvProductParameters.TabIndex = 3;
-            this.dgvProductParameters.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProductParameters_CellEndEdit);
+            this.dgvFactors.AllowUserToAddRows = false;
+            this.dgvFactors.AllowUserToDeleteRows = false;
+            this.dgvFactors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFactors.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvFactorsName,
+            this.dgvFactorsLevel,
+            this.dgvFactorsComment});
+            this.dgvFactors.Location = new System.Drawing.Point(9, 315);
+            this.dgvFactors.Name = "dgvFactors";
+            this.dgvFactors.Size = new System.Drawing.Size(737, 175);
+            this.dgvFactors.TabIndex = 5;
+            this.dgvFactors.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvFactors_CellEndEdit);
             // 
-            // dgvProductParametersName
+            // dgvFactorsName
             // 
-            this.dgvProductParametersName.HeaderText = "Название";
-            this.dgvProductParametersName.Name = "dgvProductParametersName";
-            this.dgvProductParametersName.ReadOnly = true;
-            this.dgvProductParametersName.Width = 250;
+            this.dgvFactorsName.HeaderText = "Название";
+            this.dgvFactorsName.Name = "dgvFactorsName";
+            this.dgvFactorsName.ReadOnly = true;
             // 
-            // dgvProductParametersValue
+            // dgvFactorsLevel
             // 
-            this.dgvProductParametersValue.HeaderText = "Значение";
-            this.dgvProductParametersValue.Name = "dgvProductParametersValue";
+            this.dgvFactorsLevel.HeaderText = "Уровень";
+            this.dgvFactorsLevel.Name = "dgvFactorsLevel";
+            // 
+            // dgvFactorsComment
+            // 
+            this.dgvFactorsComment.HeaderText = "Пояснение";
+            this.dgvFactorsComment.Name = "dgvFactorsComment";
+            this.dgvFactorsComment.ReadOnly = true;
+            this.dgvFactorsComment.Width = 450;
             // 
             // MainForm
             // 
@@ -346,10 +396,11 @@
             this.tcPages.ResumeLayout(false);
             this.tpProjectParameters.ResumeLayout(false);
             this.tpProjectParameters.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductParameters)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaborCoeffs)).EndInit();
             this.msMainMenu.ResumeLayout(false);
             this.msMainMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductParameters)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFactors)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,6 +440,11 @@
         private System.Windows.Forms.DataGridView dgvProductParameters;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvProductParametersName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvProductParametersValue;
+        private System.Windows.Forms.Label lblFactors;
+        private System.Windows.Forms.DataGridView dgvFactors;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvFactorsName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvFactorsLevel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvFactorsComment;
     }
 }
 

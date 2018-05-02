@@ -15,6 +15,7 @@ namespace Lab07.Forms
 
             LoadLaborCoeffs();
             LoadProductParameters();
+            LoadFactors();
         }
 
         private void LoadLaborCoeffs()
@@ -32,6 +33,15 @@ namespace Lab07.Forms
             {
                 _model.ProductParameters = new ProductParametersLoader().GetDefault();
                 UpdateProductParametersTable();
+            });
+        }
+
+        private void LoadFactors()
+        {
+            PerformAction(() =>
+            {
+                _model.Factors = new FactorsLoader().GetDefault();
+                UpdateFactorsTable();
             });
         }
 
@@ -83,6 +93,33 @@ namespace Lab07.Forms
 
                     _model.ProductParameters[name] = parameter;
                 }
+            });
+        }
+
+        private void UpdateFactorsTable()
+        {
+            dgvFactors.Rows.Clear();
+            foreach (var factor in _model.Factors)
+            {
+                dgvFactors.Rows.Add(factor.Name, factor.Level.ToString(),
+                    factor.Levels[factor.Level].Item1);
+            }
+        }
+
+        private void DgvFactors_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            PerformAction(() =>
+            {
+                foreach (DataGridViewRow row in dgvFactors.Rows)
+                {
+                    var name = (string)row.Cells["dgvFactorsName"].Value;
+
+                    var factor = _model.Factors[name];
+                    factor.Level = byte.Parse((string)row.Cells["dgvFactorsLevel"].Value);
+
+                    _model.Factors[name] = factor;
+                }
+                UpdateFactorsTable();
             });
         }
 
