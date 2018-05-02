@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Calculations\LaborCoeffs.cs" />
     <Compile Include="Calculations\Model.cs" />
+    <Compile Include="Calculations\ProductParameters.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +56,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="IO\Config\LaborCoeffsLoader.cs" />
+    <Compile Include="IO\Config\ProductParametersLoader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\MainForm.resx">

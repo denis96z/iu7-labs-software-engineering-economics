@@ -30,6 +30,9 @@
         {
             this.tcPages = new System.Windows.Forms.TabControl();
             this.tpProjectParameters = new System.Windows.Forms.TabPage();
+            this.dgvLaborCoeffs = new System.Windows.Forms.DataGridView();
+            this.dgvLaborCoeffsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvLaborCoeffsValue = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.lblLaborCoeffs = new System.Windows.Forms.Label();
             this.msMainMenu = new System.Windows.Forms.MenuStrip();
             this.miFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,13 +56,15 @@
             this.miHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.miShowHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.dgvLaborCoeffs = new System.Windows.Forms.DataGridView();
-            this.dgvLaborCoeffsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvLaborCoeffsValue = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.lblProductParameters = new System.Windows.Forms.Label();
+            this.dgvProductParameters = new System.Windows.Forms.DataGridView();
+            this.dgvProductParametersName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvProductParametersValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcPages.SuspendLayout();
             this.tpProjectParameters.SuspendLayout();
-            this.msMainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaborCoeffs)).BeginInit();
+            this.msMainMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductParameters)).BeginInit();
             this.SuspendLayout();
             // 
             // tcPages
@@ -73,6 +78,8 @@
             // 
             // tpProjectParameters
             // 
+            this.tpProjectParameters.Controls.Add(this.dgvProductParameters);
+            this.tpProjectParameters.Controls.Add(this.lblProductParameters);
             this.tpProjectParameters.Controls.Add(this.dgvLaborCoeffs);
             this.tpProjectParameters.Controls.Add(this.lblLaborCoeffs);
             this.tpProjectParameters.Location = new System.Drawing.Point(4, 22);
@@ -82,6 +89,38 @@
             this.tpProjectParameters.TabIndex = 0;
             this.tpProjectParameters.Text = "Параметры";
             this.tpProjectParameters.UseVisualStyleBackColor = true;
+            // 
+            // dgvLaborCoeffs
+            // 
+            this.dgvLaborCoeffs.AllowUserToAddRows = false;
+            this.dgvLaborCoeffs.AllowUserToDeleteRows = false;
+            this.dgvLaborCoeffs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLaborCoeffs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvLaborCoeffsName,
+            this.dgvLaborCoeffsValue});
+            this.dgvLaborCoeffs.Location = new System.Drawing.Point(9, 19);
+            this.dgvLaborCoeffs.Name = "dgvLaborCoeffs";
+            this.dgvLaborCoeffs.Size = new System.Drawing.Size(259, 316);
+            this.dgvLaborCoeffs.TabIndex = 1;
+            this.dgvLaborCoeffs.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLaborCoeffs_CellEndEdit);
+            // 
+            // dgvLaborCoeffsName
+            // 
+            this.dgvLaborCoeffsName.HeaderText = "Название";
+            this.dgvLaborCoeffsName.Name = "dgvLaborCoeffsName";
+            this.dgvLaborCoeffsName.ReadOnly = true;
+            // 
+            // dgvLaborCoeffsValue
+            // 
+            this.dgvLaborCoeffsValue.HeaderText = "Уровень";
+            this.dgvLaborCoeffsValue.Items.AddRange(new object[] {
+            "Очень низкий",
+            "Низкий",
+            "Нормальный",
+            "Высокий",
+            "Очень высокий",
+            "Сверхвысокий"});
+            this.dgvLaborCoeffsValue.Name = "dgvLaborCoeffsValue";
             // 
             // lblLaborCoeffs
             // 
@@ -259,37 +298,40 @@
             this.miAbout.Size = new System.Drawing.Size(179, 22);
             this.miAbout.Text = "О программе";
             // 
-            // dgvLaborCoeffs
+            // lblProductParameters
             // 
-            this.dgvLaborCoeffs.AllowUserToAddRows = false;
-            this.dgvLaborCoeffs.AllowUserToDeleteRows = false;
-            this.dgvLaborCoeffs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLaborCoeffs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvLaborCoeffsName,
-            this.dgvLaborCoeffsValue});
-            this.dgvLaborCoeffs.Location = new System.Drawing.Point(9, 19);
-            this.dgvLaborCoeffs.Name = "dgvLaborCoeffs";
-            this.dgvLaborCoeffs.Size = new System.Drawing.Size(244, 195);
-            this.dgvLaborCoeffs.TabIndex = 1;
-            this.dgvLaborCoeffs.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLaborCoeffs_CellEndEdit);
+            this.lblProductParameters.AutoSize = true;
+            this.lblProductParameters.Location = new System.Drawing.Point(271, 3);
+            this.lblProductParameters.Name = "lblProductParameters";
+            this.lblProductParameters.Size = new System.Drawing.Size(142, 13);
+            this.lblProductParameters.TabIndex = 2;
+            this.lblProductParameters.Text = "Характеристики продукта:";
             // 
-            // dgvLaborCoeffsName
+            // dgvProductParameters
             // 
-            this.dgvLaborCoeffsName.HeaderText = "Название";
-            this.dgvLaborCoeffsName.Name = "dgvLaborCoeffsName";
-            this.dgvLaborCoeffsName.ReadOnly = true;
+            this.dgvProductParameters.AllowUserToAddRows = false;
+            this.dgvProductParameters.AllowUserToDeleteRows = false;
+            this.dgvProductParameters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductParameters.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvProductParametersName,
+            this.dgvProductParametersValue});
+            this.dgvProductParameters.Location = new System.Drawing.Point(274, 19);
+            this.dgvProductParameters.Name = "dgvProductParameters";
+            this.dgvProductParameters.Size = new System.Drawing.Size(472, 316);
+            this.dgvProductParameters.TabIndex = 3;
+            this.dgvProductParameters.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProductParameters_CellEndEdit);
             // 
-            // dgvLaborCoeffsValue
+            // dgvProductParametersName
             // 
-            this.dgvLaborCoeffsValue.HeaderText = "Уровень";
-            this.dgvLaborCoeffsValue.Items.AddRange(new object[] {
-            "Очень низкий",
-            "Низкий",
-            "Нормальный",
-            "Высокий",
-            "Очень высокий",
-            "Сверхвысокий"});
-            this.dgvLaborCoeffsValue.Name = "dgvLaborCoeffsValue";
+            this.dgvProductParametersName.HeaderText = "Название";
+            this.dgvProductParametersName.Name = "dgvProductParametersName";
+            this.dgvProductParametersName.ReadOnly = true;
+            this.dgvProductParametersName.Width = 250;
+            // 
+            // dgvProductParametersValue
+            // 
+            this.dgvProductParametersValue.HeaderText = "Значение";
+            this.dgvProductParametersValue.Name = "dgvProductParametersValue";
             // 
             // MainForm
             // 
@@ -304,9 +346,10 @@
             this.tcPages.ResumeLayout(false);
             this.tpProjectParameters.ResumeLayout(false);
             this.tpProjectParameters.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaborCoeffs)).EndInit();
             this.msMainMenu.ResumeLayout(false);
             this.msMainMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLaborCoeffs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductParameters)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,6 +385,10 @@
         private System.Windows.Forms.DataGridView dgvLaborCoeffs;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvLaborCoeffsName;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgvLaborCoeffsValue;
+        private System.Windows.Forms.Label lblProductParameters;
+        private System.Windows.Forms.DataGridView dgvProductParameters;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvProductParametersName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvProductParametersValue;
     }
 }
 

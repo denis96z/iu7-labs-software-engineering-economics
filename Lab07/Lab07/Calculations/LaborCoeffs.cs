@@ -140,14 +140,14 @@ namespace Lab07.Calculations
             }
         }
 
-        IEnumerator<LaborCoeff> IEnumerable<LaborCoeff>.GetEnumerator()
+        public IEnumerator<LaborCoeff> GetEnumerator()
         {
             return _coeffs.GetEnumerator();
         }
 
-        public IEnumerator GetEnumerator()
+        IEnumerator IEnumerable.GetEnumerator()
         {
-            return _coeffs.GetEnumerator();
+            return GetEnumerator();
         }
 
         public LaborCoeff this[string name]

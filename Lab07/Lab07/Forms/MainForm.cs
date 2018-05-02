@@ -12,7 +12,9 @@ namespace Lab07.Forms
         public MainForm()
         {
             InitializeComponent();
+
             LoadLaborCoeffs();
+            LoadProductParameters();
         }
 
         private void LoadLaborCoeffs()
@@ -24,10 +26,19 @@ namespace Lab07.Forms
             });
         }
 
+        private void LoadProductParameters()
+        {
+            PerformAction(() =>
+            {
+                _model.ProductParameters = new ProductParametersLoader().GetDefault();
+                UpdateProductParametersTable();
+            });
+        }
+
         private void UpdateLaborCoeffsTable()
         {
             dgvLaborCoeffs.Rows.Clear();
-            foreach (LaborCoeff coeff in _model.LaborCoeffs)
+            foreach (var coeff in _model.LaborCoeffs)
             {
                 dgvLaborCoeffs.Rows.Add(coeff.Name, LaborCoeffLevelConverter.Convert(coeff.Level));
             }
@@ -35,16 +46,44 @@ namespace Lab07.Forms
 
         private void DgvLaborCoeffs_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            foreach (DataGridViewRow row in dgvLaborCoeffs.Rows)
+            PerformAction(() =>
             {
-                var name = (string)row.Cells["dgvLaborCoeffsName"].Value;
+                foreach (DataGridViewRow row in dgvLaborCoeffs.Rows)
+                {
+                    var name = (string)row.Cells["dgvLaborCoeffsName"].Value;
 
-                var coeff = _model.LaborCoeffs[name];
-                coeff.Level = LaborCoeffLevelConverter
-                    .Convert((string)row.Cells["dgvLaborCoeffsValue"].Value);
+                    var coeff = _model.LaborCoeffs[name];
+                    coeff.Level = LaborCoeffLevelConverter
+                        .Convert((string)row.Cells["dgvLaborCoeffsValue"].Value);
 
-                _model.LaborCoeffs[name] = coeff;
+                    _model.LaborCoeffs[name] = coeff;
+                }
+            });
+        }
+
+        private void UpdateProductParametersTable()
+        {
+            dgvProductParameters.Rows.Clear();
+            foreach (var parameter in _model.ProductParameters)
+            {
+                dgvProductParameters.Rows.Add(parameter.Name, parameter.Value.ToString());
             }
+        }
+
+        private void DgvProductParameters_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            PerformAction(() =>
+            {
+                foreach (DataGridViewRow row in dgvProductParameters.Rows)
+                {
+                    var name = (string) row.Cells["dgvProductParametersName"].Value;
+
+                    var parameter = _model.ProductParameters[name];
+                    parameter.Value = uint.Parse((string) row.Cells["dgvProductParametersValue"].Value);
+
+                    _model.ProductParameters[name] = parameter;
+                }
+            });
         }
 
         protected void PerformAction(Action action)
