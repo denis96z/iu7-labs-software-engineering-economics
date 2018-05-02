@@ -9,6 +9,58 @@ namespace Lab07.Calculations
         VeryLow, Low, Normal, High, VeryHigh, SuperHigh
     }
 
+    public static class LaborCoeffLevelConverter
+    {
+        public static LaborCoeffLevel Convert(string level)
+        {
+            switch (level)
+            {
+                case "Очень низкий":
+                    return LaborCoeffLevel.VeryLow;
+                case "Низкий":
+                    return LaborCoeffLevel.Low;
+                case "Нормальный":
+                    return LaborCoeffLevel.Normal;
+                case "Высокий":
+                    return LaborCoeffLevel.High;
+                case "Очень высокий":
+                    return LaborCoeffLevel.VeryHigh;
+                case "Сверхвысокий":
+                    return LaborCoeffLevel.SuperHigh;
+
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        public static string Convert(LaborCoeffLevel level)
+        {
+            switch (level)
+            {
+                case LaborCoeffLevel.VeryLow:
+                    return "Очень низкий";
+
+                case LaborCoeffLevel.Low:
+                    return "Низкий";
+
+                case LaborCoeffLevel.Normal:
+                    return "Нормальный";
+
+                case LaborCoeffLevel.High:
+                    return "Высокий";
+
+                case LaborCoeffLevel.VeryHigh:
+                    return "Очень высокий";
+
+                case LaborCoeffLevel.SuperHigh:
+                    return "Сверхвысокий";
+
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+    }
+
     public struct LaborCoeff
     {
         public string Name { get; }
@@ -64,7 +116,7 @@ namespace Lab07.Calculations
         }
     }
 
-    public class LaborCoeffs : IEnumerable
+    public class LaborCoeffs : IEnumerable<LaborCoeff>
     {
         private readonly List<LaborCoeff> _coeffs = new List<LaborCoeff>();
 
@@ -88,6 +140,11 @@ namespace Lab07.Calculations
             }
         }
 
+        IEnumerator<LaborCoeff> IEnumerable<LaborCoeff>.GetEnumerator()
+        {
+            return _coeffs.GetEnumerator();
+        }
+
         public IEnumerator GetEnumerator()
         {
             return _coeffs.GetEnumerator();
@@ -102,6 +159,20 @@ namespace Lab07.Calculations
                     if (coeff.Name == name)
                     {
                         return coeff;
+                    }
+                }
+                throw new ArgumentOutOfRangeException();
+            }
+
+            set
+            {
+                for (var i = 0; i < _coeffs.Count; ++i)
+                {
+                    // ReSharper disable once InvertIf
+                    if (_coeffs[i].Name == name)
+                    {
+                        _coeffs[i] = value;
+                        return;
                     }
                 }
                 throw new ArgumentOutOfRangeException();

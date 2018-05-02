@@ -30,6 +30,7 @@
         {
             this.tcPages = new System.Windows.Forms.TabControl();
             this.tpProjectParameters = new System.Windows.Forms.TabPage();
+            this.lblLaborCoeffs = new System.Windows.Forms.Label();
             this.msMainMenu = new System.Windows.Forms.MenuStrip();
             this.miFile = new System.Windows.Forms.ToolStripMenuItem();
             this.miNew = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,18 +53,13 @@
             this.miHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.miShowHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.dgvLaborCoeffs = new System.Windows.Forms.DataGridView();
+            this.dgvLaborCoeffsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvLaborCoeffsValue = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tcPages.SuspendLayout();
             this.tpProjectParameters.SuspendLayout();
             this.msMainMenu.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaborCoeffs)).BeginInit();
             this.SuspendLayout();
             // 
             // tcPages
@@ -77,7 +73,8 @@
             // 
             // tpProjectParameters
             // 
-            this.tpProjectParameters.Controls.Add(this.groupBox1);
+            this.tpProjectParameters.Controls.Add(this.dgvLaborCoeffs);
+            this.tpProjectParameters.Controls.Add(this.lblLaborCoeffs);
             this.tpProjectParameters.Location = new System.Drawing.Point(4, 22);
             this.tpProjectParameters.Name = "tpProjectParameters";
             this.tpProjectParameters.Padding = new System.Windows.Forms.Padding(3);
@@ -85,6 +82,15 @@
             this.tpProjectParameters.TabIndex = 0;
             this.tpProjectParameters.Text = "Параметры";
             this.tpProjectParameters.UseVisualStyleBackColor = true;
+            // 
+            // lblLaborCoeffs
+            // 
+            this.lblLaborCoeffs.AutoSize = true;
+            this.lblLaborCoeffs.Location = new System.Drawing.Point(6, 3);
+            this.lblLaborCoeffs.Name = "lblLaborCoeffs";
+            this.lblLaborCoeffs.Size = new System.Drawing.Size(142, 13);
+            this.lblLaborCoeffs.TabIndex = 0;
+            this.lblLaborCoeffs.Text = "Множители трудоемкости:";
             // 
             // msMainMenu
             // 
@@ -253,84 +259,37 @@
             this.miAbout.Size = new System.Drawing.Size(179, 22);
             this.miAbout.Text = "О программе";
             // 
-            // groupBox1
+            // dgvLaborCoeffs
             // 
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 258);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Множители трудоемкости:";
+            this.dgvLaborCoeffs.AllowUserToAddRows = false;
+            this.dgvLaborCoeffs.AllowUserToDeleteRows = false;
+            this.dgvLaborCoeffs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLaborCoeffs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvLaborCoeffsName,
+            this.dgvLaborCoeffsValue});
+            this.dgvLaborCoeffs.Location = new System.Drawing.Point(9, 19);
+            this.dgvLaborCoeffs.Name = "dgvLaborCoeffs";
+            this.dgvLaborCoeffs.Size = new System.Drawing.Size(244, 195);
+            this.dgvLaborCoeffs.TabIndex = 1;
+            this.dgvLaborCoeffs.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLaborCoeffs_CellEndEdit);
             // 
-            // label1
+            // dgvLaborCoeffsName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "PERS";
+            this.dgvLaborCoeffsName.HeaderText = "Название";
+            this.dgvLaborCoeffsName.Name = "dgvLaborCoeffsName";
+            this.dgvLaborCoeffsName.ReadOnly = true;
             // 
-            // label2
+            // dgvLaborCoeffsValue
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "PERS";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 46);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "PERS";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 59);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "PERS";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 72);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "PERS";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 85);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "PERS";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 98);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(36, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "PERS";
+            this.dgvLaborCoeffsValue.HeaderText = "Уровень";
+            this.dgvLaborCoeffsValue.Items.AddRange(new object[] {
+            "Очень низкий",
+            "Низкий",
+            "Нормальный",
+            "Высокий",
+            "Очень высокий",
+            "Сверхвысокий"});
+            this.dgvLaborCoeffsValue.Name = "dgvLaborCoeffsValue";
             // 
             // MainForm
             // 
@@ -344,10 +303,10 @@
             this.Text = "Лабораторная работа №7";
             this.tcPages.ResumeLayout(false);
             this.tpProjectParameters.ResumeLayout(false);
+            this.tpProjectParameters.PerformLayout();
             this.msMainMenu.ResumeLayout(false);
             this.msMainMenu.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaborCoeffs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,14 +338,10 @@
         private System.Windows.Forms.ToolStripMenuItem miExit;
         private System.Windows.Forms.ToolStripSeparator miLine3;
         private System.Windows.Forms.ToolStripMenuItem miSettings;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblLaborCoeffs;
+        private System.Windows.Forms.DataGridView dgvLaborCoeffs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLaborCoeffsName;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgvLaborCoeffsValue;
     }
 }
 

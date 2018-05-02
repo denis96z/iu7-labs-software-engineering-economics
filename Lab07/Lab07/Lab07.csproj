@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculations\LaborCoefficients.cs" />
+    <Compile Include="Calculations\LaborCoeffs.cs" />
     <Compile Include="Calculations\Model.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
