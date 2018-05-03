@@ -71,6 +71,35 @@ namespace Lab07.IO.Config
                     VeryHighValue = 1.00,
                     SuperHighValue = null
                 });
+
+            var c = coeffs["RCPX"];
+            c.Level = LaborCoeffLevel.VeryHigh;
+            coeffs["RCPX"] = c;
+
+            c = coeffs["RUSE"];
+            c.Level = LaborCoeffLevel.Low;
+            coeffs["RUSE"] = c;
+
+            c = coeffs["PERS"];
+            c.Level = LaborCoeffLevel.VeryHigh;
+            coeffs["PERS"] = c;
+
+            c = coeffs["PREX"];
+            c.Level = LaborCoeffLevel.Low;
+            coeffs["PREX"] = c;
+
+            c = coeffs["PDIF"];
+            c.Level = LaborCoeffLevel.Normal;
+            coeffs["PDIF"] = c;
+
+            c = coeffs["FCIL"];
+            c.Level = LaborCoeffLevel.High;
+            coeffs["FCIL"] = c;
+
+            c = coeffs["SCED"];
+            c.Level = LaborCoeffLevel.Low;
+            coeffs["SCED"] = c;
+
             return coeffs;
         }
     }

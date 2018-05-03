@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Lab07.Calculations
 {
     public class Model
     {
         public int Ksloc { get; set; }
+        public ProgLanguages Languages { get; set; }
 
         public int ManMonthCost { get; set; } = 80000;
 
@@ -24,7 +26,7 @@ namespace Lab07.Calculations
                 labor *= coeff.Value ?? throw new NullReferenceException();
             }
 
-            labor *= Math.Pow(Ksloc, CalculatePow());
+            labor *= Math.Pow(CalculateKsloc(), CalculatePow());
             return labor;
         }
 
@@ -75,6 +77,36 @@ namespace Lab07.Calculations
             }
 
             return decompositionBudget;
+        }
+
+        public List<int> CalculateStaff()
+        {
+            var staff = new List<int>();
+
+            var lifecycleLabor = CalculateLifecycleLabor();
+            var lifecycleTime = CalculateLifecycleTime();
+
+            for (var i = 0; i < Lifecycle.Count(); ++i)
+            {
+                const double minTime = 1e-5;
+                // ReSharper disable once PossibleInvalidOperationException
+                var st = (int)(lifecycleTime[i] > minTime
+                    ? lifecycleLabor[i] / lifecycleTime[i] : 0);
+                staff.Add(st);
+            }
+
+            return staff;
+        }
+
+        private int CalculateKsloc()
+        {
+            var ksloc = 0;
+            foreach (var language in Languages)
+            {
+                ksloc += (int) (Ksloc * language.SlocMultiplier * (language.SlocPercent / 100.0));
+            }
+
+            return ksloc;
         }
 
         private double CalculatePow()

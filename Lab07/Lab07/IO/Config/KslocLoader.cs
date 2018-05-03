@@ -4,7 +4,7 @@
     {
         public int GetDefault()
         {
-            return 1;
+            return 25;
         }
     }
 }

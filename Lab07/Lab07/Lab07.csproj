@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +51,7 @@
     <Compile Include="Calculations\LaborCoeffs.cs" />
     <Compile Include="Calculations\Model.cs" />
     <Compile Include="Calculations\ProductParameters.cs" />
+    <Compile Include="Calculations\ProgLanguages.cs" />
     <Compile Include="Calculations\Task.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -63,6 +65,7 @@
     <Compile Include="IO\Config\ProductParametersLoader.cs" />
     <Compile Include="IO\Data\DecompositionLoader.cs" />
     <Compile Include="IO\Data\LifecycleLoader.cs" />
+    <Compile Include="IO\Data\ProgLanguagesLoader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\MainForm.resx">

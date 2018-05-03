@@ -20,7 +20,7 @@ namespace Lab07.IO.Config
                         ("Значительное знакомство с проектом", 1.24),
                         ("Полное знакомство с проектом", 0)
                     },
-                    Level = 0
+                    Level = 1
                 },
                 new Factor
                 {
@@ -48,7 +48,7 @@ namespace Lab07.IO.Config
                         ("Почти полное (90 %)", 1.41),
                         ("Полное (100%) ", 0)
                     },
-                    Level = 0
+                    Level = 2
                 },
                 new Factor
                 {
@@ -62,7 +62,7 @@ namespace Lab07.IO.Config
                         ("Высокая согласованность", 1.1),
                         ("Взаимодействие как в едином целом", 0)
                     },
-                    Level = 0
+                    Level = 4
                 },
                 new Factor
                 {
@@ -76,7 +76,7 @@ namespace Lab07.IO.Config
                         ("Уровень 7 СММ", 1.56),
                         ("Уровень 5 СММ", 0)
                     },
-                    Level = 0
+                    Level = 3
                 }
             );
             return factors;

@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tcPages = new System.Windows.Forms.TabControl();
             this.tpProjectParameters = new System.Windows.Forms.TabPage();
             this.nudSLOC = new System.Windows.Forms.NumericUpDown();
@@ -83,6 +86,9 @@
             this.dgvDecompositionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDecompositionBudgetPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDecompositionBudget = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTotalBudget = new System.Windows.Forms.Label();
+            this.lblStaff = new System.Windows.Forms.Label();
+            this.chrtStaff = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tcPages.SuspendLayout();
             this.tpProjectParameters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSLOC)).BeginInit();
@@ -94,6 +100,7 @@
             this.tpResults.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLifecycle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDecomposition)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chrtStaff)).BeginInit();
             this.SuspendLayout();
             // 
             // tcPages
@@ -452,6 +459,9 @@
             // 
             // tpResults
             // 
+            this.tpResults.Controls.Add(this.chrtStaff);
+            this.tpResults.Controls.Add(this.lblStaff);
+            this.tpResults.Controls.Add(this.lblTotalBudget);
             this.tpResults.Controls.Add(this.lblTotalTime);
             this.tpResults.Controls.Add(this.lblTotalLabor);
             this.tpResults.Location = new System.Drawing.Point(4, 22);
@@ -473,7 +483,7 @@
             // lblTotalTime
             // 
             this.lblTotalTime.AutoSize = true;
-            this.lblTotalTime.Location = new System.Drawing.Point(19, 50);
+            this.lblTotalTime.Location = new System.Drawing.Point(16, 49);
             this.lblTotalTime.Name = "lblTotalTime";
             this.lblTotalTime.Size = new System.Drawing.Size(112, 13);
             this.lblTotalTime.TabIndex = 1;
@@ -566,6 +576,40 @@
             this.dgvDecompositionBudget.HeaderText = "Бюджет (руб.)";
             this.dgvDecompositionBudget.Name = "dgvDecompositionBudget";
             // 
+            // lblTotalBudget
+            // 
+            this.lblTotalBudget.AutoSize = true;
+            this.lblTotalBudget.Location = new System.Drawing.Point(16, 84);
+            this.lblTotalBudget.Name = "lblTotalBudget";
+            this.lblTotalBudget.Size = new System.Drawing.Size(116, 13);
+            this.lblTotalBudget.TabIndex = 2;
+            this.lblTotalBudget.Text = "Общий бюджет (руб.):";
+            // 
+            // lblStaff
+            // 
+            this.lblStaff.AutoSize = true;
+            this.lblStaff.Location = new System.Drawing.Point(315, 17);
+            this.lblStaff.Name = "lblStaff";
+            this.lblStaff.Size = new System.Drawing.Size(60, 13);
+            this.lblStaff.TabIndex = 3;
+            this.lblStaff.Text = "Персонал:";
+            // 
+            // chrtStaff
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chrtStaff.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chrtStaff.Legends.Add(legend1);
+            this.chrtStaff.Location = new System.Drawing.Point(318, 49);
+            this.chrtStaff.Name = "chrtStaff";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chrtStaff.Series.Add(series1);
+            this.chrtStaff.Size = new System.Drawing.Size(421, 300);
+            this.chrtStaff.TabIndex = 4;
+            this.chrtStaff.Text = "Персонал";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -594,6 +638,7 @@
             this.tpResults.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLifecycle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDecomposition)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chrtStaff)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -656,6 +701,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvDecompositionName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvDecompositionBudgetPercent;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvDecompositionBudget;
+        private System.Windows.Forms.Label lblTotalBudget;
+        private System.Windows.Forms.Label lblStaff;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chrtStaff;
     }
 }
 

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using Lab07.IO.Config;
 using Lab07.Calculations;
 using Lab07.IO.Data;
@@ -15,10 +17,12 @@ namespace Lab07.Forms
         {
             InitializeComponent();
 
+            LoadKsloc();
+            LoadLanguages();
+
             LoadLaborCoeffs();
             LoadProductParameters();
             LoadFactors();
-            LoadKsloc();
 
             LoadLifecycle();
             LoadDecomposition();
@@ -80,6 +84,14 @@ namespace Lab07.Forms
             });
         }
 
+        private void LoadLanguages()
+        {
+            PerformAction(() =>
+            {
+                _model.Languages = new ProgLanguagesLoader().GetDefault();
+            });
+        }
+
         public void PerformCalculations()
         {
             PerformAction(() =>
@@ -89,6 +101,11 @@ namespace Lab07.Forms
 
                 var totalTime = _model.CalculateTotalTime();
                 lblTotalTime.Text = @"Общее время(мес.):" + totalTime;
+
+                var totalBudget = _model.CalculateTotalBudget();
+                lblTotalBudget.Text = @"Общий бюджет(руб.):" + totalBudget;
+
+                UpdateStaffChart();
             });
         }
 
@@ -210,6 +227,33 @@ namespace Lab07.Forms
             }
         }
 
+        private void UpdateStaffChart()
+        {
+            PerformAction(() =>
+            {
+                if (_model.Lifecycle == null) return;
+
+                var lifecycleTime = _model.CalculateLifecycleTime();
+                var staff = _model.CalculateStaff();
+
+                chrtStaff.Series.Clear();
+                chrtStaff.Series.Add("Количество сотрудников");
+                chrtStaff.Series[0].ChartType = SeriesChartType.Column;
+                chrtStaff.Series[0].Color = Color.Red;
+
+                var index = 0;
+                for (var i = 0; i < staff.Count; ++i)
+                {
+                    // ReSharper disable once PossibleInvalidOperationException
+                    var iterationLength = (int)Math.Ceiling((decimal) lifecycleTime[i]);
+                    for (var j = 0; j < iterationLength; ++index, ++j)
+                    {
+                        chrtStaff.Series[0].Points.AddXY(index, staff[i]);
+                    }
+                }
+            });
+        }
+
         protected void PerformAction(Action action)
         {
             try
@@ -218,6 +262,7 @@ namespace Lab07.Forms
             }
             catch (Exception exception)
             {
+                if (exception is NullReferenceException) return;
                 MessageBox.Show(exception.Message, @"Ошибка!",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
