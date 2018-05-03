@@ -103,7 +103,7 @@ namespace Lab07.Calculations
             var ksloc = 0;
             foreach (var language in Languages)
             {
-                ksloc += (int) (Ksloc * language.SlocMultiplier * (language.SlocPercent / 100.0));
+                ksloc += (int) ((double)Ksloc / language.SlocMultiplier * (language.SlocPercent / 100.0));
             }
 
             return ksloc;
