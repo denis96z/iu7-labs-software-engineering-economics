@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using Lab07.IO.Config;
 using Lab07.Calculations;
+using Lab07.IO.Data;
 
 namespace Lab07.Forms
 {
@@ -17,6 +19,9 @@ namespace Lab07.Forms
             LoadProductParameters();
             LoadFactors();
             LoadKsloc();
+
+            LoadLifecycle();
+            LoadDecomposition();
 
             PerformCalculations();
         }
@@ -54,6 +59,24 @@ namespace Lab07.Forms
             {
                 _model.Factors = new FactorsLoader().GetDefault();
                 UpdateFactorsTable();
+            });
+        }
+
+        private void LoadLifecycle()
+        {
+            PerformAction(() =>
+            {
+                _model.Lifecycle = new LifecycleLoader().GetDefault();
+                UpdateLifecycleTable();
+            });
+        }
+
+        private void LoadDecomposition()
+        {
+            PerformAction(() =>
+            {
+                _model.Decomposition = new DecompositionLoader().GetDefault();
+                UpdateDecompositionTable();
             });
         }
 
@@ -157,6 +180,34 @@ namespace Lab07.Forms
                 UpdateFactorsTable();
                 PerformCalculations();
             });
+        }
+
+        private void UpdateLifecycleTable()
+        {
+            var labor = _model.CalculateLifecycleLabor();
+            var time = _model.CalculateLifecycleTime();
+
+            dgvLifecycle.Rows.Clear();
+            for (var i = 0; i < _model.Lifecycle.Count(); ++i)
+            {
+                var oh = _model.Lifecycle[i].IsOverhead ? "+" : "";
+                dgvLifecycle.Rows.Add(_model.Lifecycle[i].Name,
+                    oh + _model.Lifecycle[i].LaborPercent,
+                    oh + _model.Lifecycle[i].TimePercent,
+                    labor[i], time[i]);
+            }
+        }
+
+        private void UpdateDecompositionTable()
+        {
+            var budget = _model.CalculateDecompositionBudget();
+
+            dgvDecomposition.Rows.Clear();
+            for (var i = 0; i < _model.Decomposition.Count(); ++i)
+            {
+                dgvDecomposition.Rows.Add(_model.Decomposition[i].Name,
+                    _model.Decomposition[i].BudgetPercent, budget[i]);
+            }
         }
 
         protected void PerformAction(Action action)

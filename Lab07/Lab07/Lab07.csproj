@@ -50,6 +50,7 @@
     <Compile Include="Calculations\LaborCoeffs.cs" />
     <Compile Include="Calculations\Model.cs" />
     <Compile Include="Calculations\ProductParameters.cs" />
+    <Compile Include="Calculations\Task.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +61,8 @@
     <Compile Include="IO\Config\KslocLoader.cs" />
     <Compile Include="IO\Config\LaborCoeffsLoader.cs" />
     <Compile Include="IO\Config\ProductParametersLoader.cs" />
+    <Compile Include="IO\Data\DecompositionLoader.cs" />
+    <Compile Include="IO\Data\LifecycleLoader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\MainForm.resx">
@@ -88,8 +91,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="IO\Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

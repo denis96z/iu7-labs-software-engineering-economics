@@ -71,14 +71,29 @@
             this.tpResults = new System.Windows.Forms.TabPage();
             this.lblTotalLabor = new System.Windows.Forms.Label();
             this.lblTotalTime = new System.Windows.Forms.Label();
+            this.lblLifecycle = new System.Windows.Forms.Label();
+            this.dgvLifecycle = new System.Windows.Forms.DataGridView();
+            this.lblDecomposition = new System.Windows.Forms.Label();
+            this.dgvDecomposition = new System.Windows.Forms.DataGridView();
+            this.dgvLifecycleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvLifecycleLaborPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvLifecycleTimePercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvLifecycleLabor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvLifecycleTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDecompositionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDecompositionBudgetPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDecompositionBudget = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcPages.SuspendLayout();
             this.tpProjectParameters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSLOC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductParameters)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaborCoeffs)).BeginInit();
+            this.tpProjectWorks.SuspendLayout();
             this.msMainMenu.SuspendLayout();
             this.tpResults.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLifecycle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDecomposition)).BeginInit();
             this.SuspendLayout();
             // 
             // tcPages
@@ -257,6 +272,10 @@
             // 
             // tpProjectWorks
             // 
+            this.tpProjectWorks.Controls.Add(this.dgvDecomposition);
+            this.tpProjectWorks.Controls.Add(this.lblDecomposition);
+            this.tpProjectWorks.Controls.Add(this.dgvLifecycle);
+            this.tpProjectWorks.Controls.Add(this.lblLifecycle);
             this.tpProjectWorks.Location = new System.Drawing.Point(4, 22);
             this.tpProjectWorks.Name = "tpProjectWorks";
             this.tpProjectWorks.Size = new System.Drawing.Size(752, 496);
@@ -460,6 +479,93 @@
             this.lblTotalTime.TabIndex = 1;
             this.lblTotalTime.Text = "Общее время (мес.):";
             // 
+            // lblLifecycle
+            // 
+            this.lblLifecycle.AutoSize = true;
+            this.lblLifecycle.Location = new System.Drawing.Point(3, 0);
+            this.lblLifecycle.Name = "lblLifecycle";
+            this.lblLifecycle.Size = new System.Drawing.Size(139, 13);
+            this.lblLifecycle.TabIndex = 0;
+            this.lblLifecycle.Text = "Этапы жизненного цикла:";
+            // 
+            // dgvLifecycle
+            // 
+            this.dgvLifecycle.AllowUserToAddRows = false;
+            this.dgvLifecycle.AllowUserToDeleteRows = false;
+            this.dgvLifecycle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLifecycle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvLifecycleName,
+            this.dgvLifecycleLaborPercent,
+            this.dgvLifecycleTimePercent,
+            this.dgvLifecycleLabor,
+            this.dgvLifecycleTime});
+            this.dgvLifecycle.Location = new System.Drawing.Point(6, 16);
+            this.dgvLifecycle.Name = "dgvLifecycle";
+            this.dgvLifecycle.Size = new System.Drawing.Size(546, 227);
+            this.dgvLifecycle.TabIndex = 1;
+            // 
+            // lblDecomposition
+            // 
+            this.lblDecomposition.AutoSize = true;
+            this.lblDecomposition.Location = new System.Drawing.Point(3, 246);
+            this.lblDecomposition.Name = "lblDecomposition";
+            this.lblDecomposition.Size = new System.Drawing.Size(87, 13);
+            this.lblDecomposition.TabIndex = 2;
+            this.lblDecomposition.Text = "Декомпозиция:";
+            // 
+            // dgvDecomposition
+            // 
+            this.dgvDecomposition.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDecomposition.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDecompositionName,
+            this.dgvDecompositionBudgetPercent,
+            this.dgvDecompositionBudget});
+            this.dgvDecomposition.Location = new System.Drawing.Point(6, 262);
+            this.dgvDecomposition.Name = "dgvDecomposition";
+            this.dgvDecomposition.Size = new System.Drawing.Size(546, 231);
+            this.dgvDecomposition.TabIndex = 3;
+            // 
+            // dgvLifecycleName
+            // 
+            this.dgvLifecycleName.HeaderText = "Название";
+            this.dgvLifecycleName.Name = "dgvLifecycleName";
+            // 
+            // dgvLifecycleLaborPercent
+            // 
+            this.dgvLifecycleLaborPercent.HeaderText = "Трудозатраты (%)";
+            this.dgvLifecycleLaborPercent.Name = "dgvLifecycleLaborPercent";
+            // 
+            // dgvLifecycleTimePercent
+            // 
+            this.dgvLifecycleTimePercent.HeaderText = "Время (%)";
+            this.dgvLifecycleTimePercent.Name = "dgvLifecycleTimePercent";
+            // 
+            // dgvLifecycleLabor
+            // 
+            this.dgvLifecycleLabor.HeaderText = "Трудозатраты (чел./мес.)";
+            this.dgvLifecycleLabor.Name = "dgvLifecycleLabor";
+            // 
+            // dgvLifecycleTime
+            // 
+            this.dgvLifecycleTime.HeaderText = "Время (мес.)";
+            this.dgvLifecycleTime.Name = "dgvLifecycleTime";
+            // 
+            // dgvDecompositionName
+            // 
+            this.dgvDecompositionName.HeaderText = "Название";
+            this.dgvDecompositionName.Name = "dgvDecompositionName";
+            this.dgvDecompositionName.ReadOnly = true;
+            // 
+            // dgvDecompositionBudgetPercent
+            // 
+            this.dgvDecompositionBudgetPercent.HeaderText = "Бюджет (%)";
+            this.dgvDecompositionBudgetPercent.Name = "dgvDecompositionBudgetPercent";
+            // 
+            // dgvDecompositionBudget
+            // 
+            this.dgvDecompositionBudget.HeaderText = "Бюджет (руб.)";
+            this.dgvDecompositionBudget.Name = "dgvDecompositionBudget";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,10 +586,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductParameters)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaborCoeffs)).EndInit();
+            this.tpProjectWorks.ResumeLayout(false);
+            this.tpProjectWorks.PerformLayout();
             this.msMainMenu.ResumeLayout(false);
             this.msMainMenu.PerformLayout();
             this.tpResults.ResumeLayout(false);
             this.tpResults.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLifecycle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDecomposition)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -534,6 +644,18 @@
         private System.Windows.Forms.TabPage tpResults;
         private System.Windows.Forms.Label lblTotalLabor;
         private System.Windows.Forms.Label lblTotalTime;
+        private System.Windows.Forms.Label lblLifecycle;
+        private System.Windows.Forms.DataGridView dgvLifecycle;
+        private System.Windows.Forms.Label lblDecomposition;
+        private System.Windows.Forms.DataGridView dgvDecomposition;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLifecycleName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLifecycleLaborPercent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLifecycleTimePercent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLifecycleLabor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvLifecycleTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvDecompositionName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvDecompositionBudgetPercent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvDecompositionBudget;
     }
 }
 
